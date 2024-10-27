@@ -25,7 +25,7 @@ header ul li {
     /* padding-left: 700px; */
     font-size: 18px;
     font-weight:500;
-    }
+}
 
 .divisionHeader{
     font-family: Arial, Helvetica, sans-serif;
@@ -56,3 +56,7 @@ header ul li a {
   
   /* Ajustar la posición del menú con una separación */
   
+
+.imagen_header:hover{
+    opacity: 0.6;
+}

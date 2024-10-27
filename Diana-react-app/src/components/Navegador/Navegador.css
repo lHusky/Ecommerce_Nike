@@ -1,50 +1,44 @@
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-  }
-  
-  .imagen_header {
-    width: 100px;
-  }
-  
-  ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  li {
-    margin: 0 10px;
-  }
-  
-  .divisionHeader {
-    color: #000;
-  }
-  
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  .dropdown-container {
-    position: relative;
-    display: inline-block;
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-  }
+nav{
+  height: 90px;
+  background-color: aqua;
+  display: flex;
+  /* font-family: "Libre Franklin", sans-serif; */
+  font-family: "Heebo", sans-serif;
+}
+
+.imagen_navegador{
+  display: flex;
+  margin-left: 74px;
+  height: 31px;
+  width: 92px;
+  padding-top: 26px
+}
+
+.imagen_navegador:hover{
+  opacity: 0.6;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  padding-right:79px ;
+  /* margin-left: auto; */
+  margin-left: 557px;
+}
+nav ul li {
+  padding-right: 34px;
+  /* padding-left: 700px; */
+  padding-top: 16px;
+  font-size: 25px;
+  font-weight:500;
+  transform: scale(1,0.9);
   
-  /* Aquí extendemos el área de hover sin modificar la posición visual del botón */
-  .dropdown-container::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    height: 20px; /* Extiende el área de hover por debajo */
-    width: 100%;
-  }
-  
-  /* Ajustar la posición del menú con una separación */
-  
+}
+
+
+nav ul li a {
+  text-decoration: none; 
+  color: black; 
+}
