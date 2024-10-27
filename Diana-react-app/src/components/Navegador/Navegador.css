@@ -1,0 +1,50 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .imagen_header {
+    width: 100px;
+  }
+  
+  ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin: 0 10px;
+  }
+  
+  .divisionHeader {
+    color: #000;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .dropdown-container {
+    position: relative;
+    display: inline-block;
+
+  }
+  
+  /* Aquí extendemos el área de hover sin modificar la posición visual del botón */
+  .dropdown-container::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 20px; /* Extiende el área de hover por debajo */
+    width: 100%;
+  }
+  
+  /* Ajustar la posición del menú con una separación */
+  
