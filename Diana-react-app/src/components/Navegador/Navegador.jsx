@@ -3,6 +3,11 @@ import './Navegador.css';
 import Logo from '../../assets/logo_nikes.png';
 
 const Navegador = () => {
+   /*HOOK de estado de menu desplegable - se visualiza o no*/
+   const [esVisible, setEsVisible] = useState(false);
+
+  const mouseDentro = () => setEsVisible(true);
+  const mouseFuera = () => setEsVisible(false);
 
   return (
     <nav>
@@ -15,6 +20,10 @@ const Navegador = () => {
           <li><a href="#">Accesorios</a></li>
           <li><a href="#">Descuentos</a></li>
         </ul>
+        <div className='contenedorBuscador'>
+          <button type="submitt" className="lupa" id="" />
+          <input type="text" className="buscador" placeholder="Buscar" />
+        </div>
     </nav>
   );
 };

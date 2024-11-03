@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 .imagen_header{
     display: flex;
-    margin-left: 75px;
-    height: 39px;
-    width: 37px;
-    padding-top: 8px
+    margin-left: 47px;
+    height: 23px;
+
+    align-self: center;
 }
 
 header{
     margin-top: 0px;
-    height: 54px;
+    height: 37px;
     background-color: #f5f5f5;
     display: flex;
     font-family: "Heebo", sans-serif;
@@ -17,13 +17,14 @@ header{
 header ul {
     list-style-type: none;
     display: flex;
-    padding-right:79px ;
+    padding-right:49px ;
     margin-left: auto;
+    align-items: center;
 }
 header ul li {
-   padding-right: 24px;
+   padding-right: 15px;
     /* padding-left: 700px; */
-    font-size: 18px;
+    font-size: 12.5px;
     font-weight:500;
 }
 
@@ -50,8 +51,9 @@ header ul li a {
     position: absolute;
     top: 100%;
     left: 0;
-    height: 20px; /* Extiende el área de hover por debajo */
+    height: 10px; /* Extiende el área de hover por debajo */
     width: 100%;
+   
   }
   
   /* Ajustar la posición del menú con una separación */
