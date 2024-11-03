@@ -7,15 +7,15 @@
     background-color: white;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     /*asegurar q este encima el menu*/
-    padding: 10px;
+    padding: 6px;
     z-index: 1;
     /*tamaño*/
-    width: 332px;
+    width: 202px;
     
-    padding-top: 38px;
+    padding-top: 18px;
     margin-right: 25px;
     /*posición  del menu*/
-    margin-top: 13px;
+    margin-top: 4px;
     top: 120%; /* Ajusta la separación visual */
     right: 0;   /* Alinea el menú con el borde derecho del contenedor */
     font-family: "Libre Franklin", sans-serif;
@@ -27,24 +27,24 @@
     padding: 8px;
     cursor: pointer;
     padding-left: 18px;
-    margin-bottom: 9px;
+    margin-bottom: 1px;
     transform: scale(1, 1);
 
 }
 
 .menu_desplegable li a {
     color: rgb(143, 143, 143);
-    font-size: 20px;
+    font-size: 13px;
     font-weight: 600;
     
 }
 .menu_desplegable li:nth-of-type(1) {
     
-    margin-bottom: 22px;
+    margin-bottom: 9px;
   
 }
 .menu_desplegable li:nth-of-type(1) a{
-    font-size: 23px;
+    font-size: 15px;
     color: black;
 
 }
