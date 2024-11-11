@@ -1,47 +1,85 @@
-body{
-    height: 468px;
-    width: 921px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@300&display=swap');
+
+
+body {
+    height: 489px; 
+    width: 100%; 
     margin: 0;
-    padding: 0;
+    padding-left: 24px; 
+    padding-right: 24px; 
     box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
 }
 
-.parte1{
-    margin-top: 15px;
-    padding-left:48px;
-    padding-right: 48px;
-    height: 468px;
-    width: 825px;
+
+.parte1 {
+    height: 489px; 
+    width: 100%; 
+    display: flex;
+    justify-content: center ;
 }
 
-.parte2{
+
+.parte2 {
     justify-content: center;
     align-content: center;
     display: flex;
+    height: 489px; 
+    width: 100%;    
 }
 
-.parte3{
-    padding: 24px   ;
+
+.parte3 {
+    max-width: 388px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.parte4 {
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap; 
+    gap: 8px;
+    width: 388px 
+    
+}
+
+
+.imagen1 {
+    padding-top: 10px;
+    height: 16px;
+    width: 43px;
+    max-width: 100%;
+    align-items: center;
+}
+
+.imagen2 {
+    height: 33px;
+    width: 36px;
+    max-width: 100%;
+}
+
+span {
+    font-size: 28px;
+    font-weight: 400;
+    font-family: Helvetica Neue;
+    line-height: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.Correo{
+    margin-bottom: 16px;
     display: flex;
     flex-direction: column;
 }
 
-.parte4{
-    display: flex;
-    margin-top: 16px;
-    margin-bottom: 16px;
+label{
+    color: #757575;
 }
 
-.imagen1{
-height: 50px;
-width: 100px;
-}
-
-.imagen2{
-    height: 50px;
-    width: 50px;
-}
-
-span{
-    margin-bottom: 20px;
-}
