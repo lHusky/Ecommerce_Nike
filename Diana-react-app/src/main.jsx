@@ -12,5 +12,6 @@ createRoot(document.getElementById('root')).render(
     <Header/>
     <Navegador/>
     <PromoHeader/>
+    <App/>
   </StrictMode>,
 )

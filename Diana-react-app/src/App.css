@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+section article{
+    display: flex;
+}
+section article h3{
+    font-family: "Heebo", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin-left: 47px;
+    
+}
+section article button{
+    align-self: center;
+    left: 0%;
+}
+.bontones_sec1{
+    background-color: #E5E5E5;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    background-size: 50% 60%; /* Tamaño de la imagen dentro del área de fondo */
+    background-position: center; /* Centra la imagen en el área de fondo */
+    border: none;
+    background-repeat: no-repeat; 
+    background-image: url('./assets/anterior.png'); /*anterior*/
+    cursor: pointer;
+    margin-left: auto;
+   
+
+  }
+  
+  .bontones_sec1:hover{
+      background-color: #CCCCCC;
+  }
+  
+
+.bontones_sec1_2{
+  background-color: #E5E5E5;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  background-size: 50% 60%; /* Tamaño de la imagen dentro del área de fondo */
+  background-position: center; /* Centra la imagen en el área de fondo */
+  border: none;
+  background-repeat: no-repeat; 
+  background-image: url('./assets/proximo.png');
+  cursor: pointer;
+  margin-left: 10px
+}
+
+.bontones_sec1_2:hover{
+    background-color: #CCCCCC;
+}
+
+
+
+
+.bontones_sec2{
+    background-color: #fdfdfd;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    background-size: 50% 60%; /* Tamaño de la imagen dentro del área de fondo */
+    background-position: center; /* Centra la imagen en el área de fondo */
+    /* border: none; */
+    background-repeat: no-repeat; 
+    background-image: url('./assets/anterior.png'); /*anterior*/
+    cursor: pointer;
+  }
+  
+
+
+.bontones_sec2_2{
+  background-color: #fdfdfd;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  background-size: 50% 60%; /* Tamaño de la imagen dentro del área de fondo */
+  background-position: center; /* Centra la imagen en el área de fondo */
+  /* border: none; */
+  background-repeat: no-repeat; 
+  background-image: url('./assets/proximo.png'); 
+  cursor: pointer;
+}
+
+
+

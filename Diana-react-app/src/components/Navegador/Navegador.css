@@ -76,7 +76,7 @@ nav ul li a {
   margin-left: auto; /* Empuja el contenedor a la derecha */
   width: 200px; /* Asegura que el contenedor ocupe el ancho disponible */
   max-width: 300px;
-  margin-right:9%;
+  margin-right:0.2%;
   position: relative;
 }
 .lupa{
@@ -97,7 +97,7 @@ nav ul li a {
 .buscador{
   border: none;
   border-radius: 19px;
-  padding-left: 42px;
+  padding-left: 41px;
   height: 38px;
   width: 137px;
   background-color: #f5f5f5;
@@ -119,4 +119,36 @@ nav ul li a {
 }
 .buscador:hover::placeholder {
   color: #757575;
+}
+.contenedorFavBolsa{
+  align-self: center;
+  margin-right: 3.1%;
+  align-items: center;
+  display: flex
+}
+.iconoFavoritos{
+  width: 21px;
+  height: 21px;
+  
+  /* margin-right: 40px; */
+}
+.iconoBolsaCompra{
+  width: 20px;
+  height: 21px;
+}
+.contenedorFavBolsa a{
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+}
+.contenedorFavBolsa a:nth-of-type(1){
+  margin-right: 12px;
+}
+.contenedorFavBolsa a:hover{
+  background-color: #E5E5E5;
+  border-radius: 50%;
+  background-size: 100% 100%; /* Ancho de 200px y alto de 100px */
 }

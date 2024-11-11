@@ -17,14 +17,14 @@ header{
 header ul {
     list-style-type: none;
     display: flex;
-    padding-right:49px ;
+    padding-right:48px ;
     margin-left: auto;
     align-items: center;
 }
 header ul li {
-   padding-right: 15px;
+   padding-right: 16px;
     /* padding-left: 700px; */
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight:500;
 }
 
