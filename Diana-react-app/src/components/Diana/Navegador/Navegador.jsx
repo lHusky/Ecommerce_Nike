@@ -29,7 +29,7 @@ const Navegador = () => {
         </div>
         <div className='contenedorFavBolsa'>
           <a href="#"><img className='iconoFavoritos' src={Corazon} alt="icono de productos Favoritos" /></a>
-          <a href="/Carrito/Carrito.jsx"><img className='iconoBolsaCompra' src={BolsaCompra} alt="icono de bolsa de Compras" /></a>
+          <a href="/carrito"><img className='iconoBolsaCompra' src={BolsaCompra} alt="icono de bolsa de Compras" /></a>
         </div>
     </nav>
   );

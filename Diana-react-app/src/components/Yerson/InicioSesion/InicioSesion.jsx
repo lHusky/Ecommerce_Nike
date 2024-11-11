@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './Body.css';
-import Logo from '../../assets/logo_nikes.png';
-import Jump from '../../assets/JumpLogoNike.png';
+import './InicioSesion.css';
+// import Logo from '../../../assets/logo_nikes.png';
+// import Jump from '../../../assets/JumpLogoNike.png';
 
-const Body = () => {
+const InicioSesion = () => { 
 
   return (
     <body>
@@ -25,4 +25,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default InicioSesion;
