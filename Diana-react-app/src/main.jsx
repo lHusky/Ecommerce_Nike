@@ -28,7 +28,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <div style={{ width: '100%', height: '100%' }}> {/* Forzar 100% */}
     <RouterProvider router={router}/>
+    </div>
+  
   </StrictMode>,
 )
 

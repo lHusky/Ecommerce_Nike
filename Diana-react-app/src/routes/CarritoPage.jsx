@@ -5,12 +5,12 @@ import PromoHeader from'../components/Diana/PromoHeader/PromoHeader.jsx'
 
 const CarritoPage = () => {
     return(
-        <body>
+        <div>
             <Header/>
             <Navegador/>
             <PromoHeader/> 
             <Carrito />
-        </body>
+        </div>
     )
 }
 
