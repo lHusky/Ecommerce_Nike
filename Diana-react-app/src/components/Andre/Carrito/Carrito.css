@@ -1,0 +1,133 @@
+.carrito-container {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .header .logo {
+    width: 50px; /* Ajusta el tamaño del logo */
+  }
+  
+  .header nav a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .header-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .header-icons a,
+  .header-icons .search-bar {
+    margin: 0 5px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .search-bar {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .promo {
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  .carrito-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .left-section {
+    width: 65%;
+  }
+  
+  .right-section {
+    width: 30%;
+  }
+  
+  .favoritos {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .resumen {
+    background-color: #f1f1f1;
+    padding: 20px;
+    width: 100%;
+    margin-top: 20px;
+    text-align: left;
+    border-radius: 8px;
+  }
+  
+  .resumen label {
+    font-weight: bold;
+  }
+  
+  .resumen p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  
+  .total {
+    font-weight: bold;
+  }
+  
+  .comprar-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ccc;
+    color: white;
+    border: none;
+    cursor: not-allowed;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .tambien-gustarte {
+    margin-top: 40px;
+    text-align: left;
+  }
+  
+  .tambien-gustarte h3 {
+    margin-bottom: 20px;
+  }
+  
+  .productos {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .producto img {
+    width: 150px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  

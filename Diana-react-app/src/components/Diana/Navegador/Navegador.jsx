@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Navegador.css';
-import Logo from '../../assets/logo_nikes.png';
-import Corazon from '../../assets/corazon.png';
-import BolsaCompra from '../../assets/BolsaCompra.png';
+import Logo from '../../../assets/logo_nikes.png';
+import Corazon from '../../../assets/corazon.png';
+import BolsaCompra from '../../../assets/BolsaCompra.png';
 
 
 const Navegador = () => {
@@ -29,7 +29,7 @@ const Navegador = () => {
         </div>
         <div className='contenedorFavBolsa'>
           <a href="#"><img className='iconoFavoritos' src={Corazon} alt="icono de productos Favoritos" /></a>
-          <a href="#"><img className='iconoBolsaCompra' src={BolsaCompra} alt="icono de bolsa de Compras" /></a>
+          <a href="/Carrito/Carrito.jsx"><img className='iconoBolsaCompra' src={BolsaCompra} alt="icono de bolsa de Compras" /></a>
         </div>
     </nav>
   );

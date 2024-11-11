@@ -1,0 +1,47 @@
+body{
+    height: 468px;
+    width: 921px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parte1{
+    margin-top: 15px;
+    padding-left:48px;
+    padding-right: 48px;
+    height: 468px;
+    width: 825px;
+}
+
+.parte2{
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+.parte3{
+    padding: 24px   ;
+    display: flex;
+    flex-direction: column;
+}
+
+.parte4{
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.imagen1{
+height: 50px;
+width: 100px;
+}
+
+.imagen2{
+    height: 50px;
+    width: 50px;
+}
+
+span{
+    margin-bottom: 20px;
+}
