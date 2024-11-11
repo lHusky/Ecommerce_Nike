@@ -2,9 +2,9 @@ import Checkout from "../components/Andre/Checkout/Checkout.jsx"
 
 const CheckoutPage = () => {
     return(
-        <body>
+        <div>
             <Checkout/>
-        </body>
+        </div>
     )
 }
 

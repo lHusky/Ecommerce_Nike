@@ -8,7 +8,7 @@ import PromoHeader from'./components/Diana/PromoHeader/PromoHeader.jsx'
 function App() {
 
   return (
-    <body>
+    <div>
      <Header/>
     <Navegador/>
     <PromoHeader/> 
@@ -46,7 +46,7 @@ function App() {
           <h3>Nike Membership</h3>
         </article>
       </section>
-    </body>
+    </div>
   )
 }
 

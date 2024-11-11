@@ -28,7 +28,7 @@ const Header = () => {
                 <li className='divisionHeader'>|</li>
                 <li><a href="">Únete</a></li>
                 <li className='divisionHeader'>|</li>
-                <li><a href="">Iniciar sesión</a></li>
+                <li><a href="/iniciarSesion">Iniciar sesión</a></li>
             </ul>
         </header>
     )
