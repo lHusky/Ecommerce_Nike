@@ -1,5 +1,5 @@
 import './Header.css'
-import Logo from '../../assets/jordan.svg';
+import Logo from '../../../assets/jordan.svg';
 import DesplegableHeader from './DesplegableHeader/DesplegableHeader.jsx'
 import React, { useState } from 'react';
 

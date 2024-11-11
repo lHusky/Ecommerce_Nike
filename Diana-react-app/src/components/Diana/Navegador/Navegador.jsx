@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './Navegador.css';
-import Logo from '../../assets/logo_nikes.png';
+import Logo from '../../../assets/logo_nikes.png';
+import Corazon from '../../../assets/corazon.png';
+import BolsaCompra from '../../../assets/BolsaCompra.png';
+
 
 const Navegador = () => {
    /*HOOK de estado de menu desplegable - se visualiza o no*/
@@ -23,6 +26,10 @@ const Navegador = () => {
         <div className='contenedorBuscador'>
           <button type="submitt" className="lupa" id="" />
           <input type="text" className="buscador" placeholder="Buscar" />
+        </div>
+        <div className='contenedorFavBolsa'>
+          <a href="#"><img className='iconoFavoritos' src={Corazon} alt="icono de productos Favoritos" /></a>
+          <a href="/carrito"><img className='iconoBolsaCompra' src={BolsaCompra} alt="icono de bolsa de Compras" /></a>
         </div>
     </nav>
   );
