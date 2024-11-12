@@ -3,14 +3,43 @@
 
 .carousel {
     display: flex;
+}
+
+.carousel-objeto {
+    display: block;
+    margin-right: 13px;
+    
+}
+.carousel-imagen{
+    margin-bottom: 20px;
+}
+.division-texto {
+    display: flex;
+    justify-content: space-between; /* Alinea el título y el precio en extremos opuestos */
+    width: 100%;
+    font-family: "Heebo", sans-serif;
+    margin: 0;
+}
+
+.carousel-texto {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.carousel-texto p {
+    margin:0;
+}
+.carousel-texto p:nth-of-type(2){
+    margin-top: 5px;
+}
+
+.division-precio {
+    display: flex;
+    font-weight: 600; 
     
 }
 
-.carousel-objeto{
-    display: block;
-    margin-right: 13px;
-
-}
-.carousel-texto{
-    font-family: "Heebo", sans-serif;
+.division-precio p{
+    margin: 0;
 }

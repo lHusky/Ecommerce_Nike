@@ -7,8 +7,9 @@ const Carousel = ({
     imageWidth, 
     imageHeight, 
     fontSize = '16px', 
+    fontColor="#959595",
     textAlignment = 'center', 
-    titleFontSize = '20px', 
+    titleFontSize = '16px', 
     // hoverEffect = false,     //sinEfecto por defecto
     titleColor = '#000000',  //negro por defecto
     titleFontWeight = '600'
@@ -24,11 +25,17 @@ const Carousel = ({
                     <img src={item.image} alt={item.title} className="carousel-imagen" style={{ width: imageWidth, height: imageHeight }}/>
                     
                      {(item.title!='' ||item.description!='' ||item.price!='') && 
-                     <div className="carousel-texto" style={{ fontSize, textAlign: textAlignment }}>
-                        {item.title!='' &&<p style={{ fontSize: titleFontSize, color: titleColor, fontWeight: titleFontWeight}}>{item.title}</p>}
-                        {item.description!='' && <p>{item.description}</p>}
-                        {item.price!=''  && <p>{item.price}</p>}
-                     </div>}
+                        <div className='division-texto'> 
+                            <div className="carousel-texto" style={{ fontSize, textAlign: textAlignment }}>
+                                {item.title!='' &&<p style={{ fontSize: titleFontSize, color: titleColor, fontWeight: titleFontWeight}}>{item.title}</p>}
+                                {item.description!='' && <p style={{color:fontColor}}>{item.description}</p>}
+                            </div>
+                        
+                            <div className='division-precio'>
+                                {item.price!=''  && <p>{item.price}</p>}
+                            </div>
+                        </div>
+                    }
                 </article>
             ))}
         </div>

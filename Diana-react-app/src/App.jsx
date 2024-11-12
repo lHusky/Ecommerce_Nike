@@ -18,6 +18,21 @@ function App() {
     { image: '../../../../public/carrusel1/producto7_carrusel1.png', title: 'Nike Court Royale 2 Low', description:  'Zapatillas para hombre',price:'S/ 229.90' }
 ];
 
+const productos_crs2 = [
+  { image: '../../../../public/carrusel2/producto1_carrusel2.png', title: 'Nike Pegasus 41', description: '',price:'' },
+  { image: '../../../../public/carrusel2/producto2_carrusel2.png', title: 'Prepárate para el verano', description: '',price:'' },
+  { image: '../../../../public/carrusel2/producto3_carrusel2.png', title: 'Explora lo último de Jordan', description: '',price:'' },
+  { image: '../../../../public/carrusel2/producto4_carrusel2.png', title: 'Lo mejor de Nike Fútbol', description: '',price:'' },
+  { image: '../../../../public/carrusel2/producto4_carrusel2.png', title: 'Lo nuevo de Air Max', description: '',price:'' }
+];
+
+const productos_crs3 = [
+  { image: '../../../../public/carrusel2/producto1_carrusel2.png', title: 'Nike Pegasus 41', description: '',price:'' },
+  { image: '../../../../public/carrusel2/producto2_carrusel2.png', title: 'Prepárate para el verano', description: '',price:'' },
+  { image: '../../../../public/carrusel2/producto3_carrusel2.png', title: 'Explora lo último de Jordan', description: '',price:'' },
+  { image: '../../../../public/carrusel2/producto4_carrusel2.png', title: 'Lo mejor de Nike Fútbol', description: '',price:'' },
+  { image: '../../../../public/carrusel2/producto4_carrusel2.png', title: 'Lo nuevo de Air Max', description: '',price:'' }
+];
 
   return (
     <div>
@@ -47,7 +62,17 @@ function App() {
           <button className='bontones_sec1'></button>
           <button className='bontones_sec1_2'></button>
         </article>
-
+        <div className='carrusel2'> 
+          <Carrusel
+                items={productos_crs2}
+                imageWidth="500px"
+                imageHeight="500px"
+                fontSize="16px"
+                textAlignment="left"
+                titleFontSize="23px"
+                
+            />
+          </div>
         <article>
         <h3>Siempre Icónico</h3>
           <button className='bontones_sec2'></button>
