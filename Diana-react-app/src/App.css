@@ -93,3 +93,15 @@ body section article button{
 }
 
 
+.artic{
+  height: 70px;
+  margin-top: 65px;
+}
+
+.bontones_sec1[disabled],
+.bontones_sec1_2[disabled] {
+    background-color: #ccc; /* Cambia el color de fondo */
+    color: #666; /* Cambia el color de texto */
+    cursor: unset; /* Cambia el cursor */
+    opacity: 0.2; /* Reduce la opacidad */
+}
