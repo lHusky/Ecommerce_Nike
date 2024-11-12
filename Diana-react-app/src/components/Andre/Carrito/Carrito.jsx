@@ -1,6 +1,7 @@
 import './Carrito.css'
 import foto1 from '../../../assets/foto1.png'
 import foto2 from '../../../assets/foto2.jpg'
+import foto3 from '../../../assets/foto3.png'
 
 const Carrito = () => {
     return (
@@ -26,7 +27,7 @@ const Carrito = () => {
             <p>Envío <span>S/ 0.00</span></p>
             <p>IGV (18%) <span>S/ 0.00</span></p>
             <p>Total de la orden <span>S/ 0.00</span></p>
-            <button className="comprar-btn">Comprar</button>
+            <a className="comprar-btn" href="/checkout">Comprar</a>
           </div>
         </div>
   
@@ -40,7 +41,7 @@ const Carrito = () => {
               <img src={foto2} alt="Producto 2" />
             </div>
             <div className="producto">
-              <img src="url-imagen-gorra" alt="Producto 3" />
+              <img src={foto3} alt="Producto 3" />
             </div>
           </div>
         </div>
