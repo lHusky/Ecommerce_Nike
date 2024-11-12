@@ -14,7 +14,7 @@ const Navegador = () => {
 
   return (
     <nav>
-        <img src={Logo} alt="Logo Nike" className='imagen_navegador'/>
+        <a href="/" className='enlacelogo'><img src={Logo} alt="Logo Nike" className='imagen_navegador'/></a>
         <ul>
           <li><a href="#">Lo nuevo</a></li>
           <li><a href="#">Hombre</a></li>

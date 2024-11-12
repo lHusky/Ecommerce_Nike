@@ -10,12 +10,14 @@ nav{
 
 .imagen_navegador{
   display: flex;
-  margin-left: 47px;
   height: 20px;
   width: 63px;
   align-self: center;
 }
-
+.enlacelogo{
+  margin-left: 47px;
+  align-self: center;
+}
 .imagen_navegador:hover{
   opacity: 0.6;
 }
@@ -85,7 +87,7 @@ nav ul li a {
   margin-left: 6%;
   position: absolute;
   margin-top: 5.5%;
-  background-image: url('../../assets/Lupa.png');
+  background-image: url('../../../assets/Lupa.png');
   background-size: contain;  /*ajusta la imagen para q se redimencione segun el fondo sin cortars*/
   background-repeat: no-repeat;
   border: none;

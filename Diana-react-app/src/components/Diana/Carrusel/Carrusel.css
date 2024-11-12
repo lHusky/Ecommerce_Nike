@@ -1,0 +1,14 @@
+.carousel {
+    display: flex;
+    
+}
+
+.carousel-objeto{
+    display: block;
+    margin-right: 13px;
+
+}
+/* .carousel-texto h3{
+   margin:0;
+   margin-top: 15px;
+} */

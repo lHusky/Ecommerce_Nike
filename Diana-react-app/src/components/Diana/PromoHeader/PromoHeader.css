@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.icono_rayo{
-    color: #FF822D;
-}
+
 .promo{
     margin: 0px;
     width: 100%;
@@ -21,6 +19,7 @@
     font-weight: 600;
     font-size: 15.5px;
     transform: scale(1.1, 1);
+    color: black;
 }
 .promo h5 a{
     /* text-decoration: none;  */

@@ -1,18 +1,33 @@
 // Carousel.js
 import React from 'react';
-import './Carousel.css';
+import './Carrusel.css';
 
-const Carousel = ({ items, imageWidth, imageHeight, fontSize, textAlignment }) => {
+const Carousel = ({ 
+    items, 
+    imageWidth, 
+    imageHeight, 
+    fontSize = '16px', 
+    textAlignment = 'center', 
+    titleFontSize = '20px', 
+    // hoverEffect = false,     //sinEfecto por defecto
+    titleColor = '#000000'  //negro por defecto
+}) => {
     return (
         <div className="carousel">
             {/* recorrer la lista de productos/categorias */}
             {items.map((item, index) => (
-                <article key={index} className="carousel-objeto" style={{ width: imageWidth, height: imageHeight }}>
-                    <img src={item.image} alt={item.title} className="carousel-imagen" />
-                    <div className="carousel-texto" style={{ fontSize, textAlign: textAlignment }}>
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
-                    </div>
+                <article 
+                    key={index} 
+                    className="carousel-objeto"
+                >
+                    <img src={item.image} alt={item.title} className="carousel-imagen" style={{ width: imageWidth, height: imageHeight }}/>
+                    
+                     {(item.title!='' ||item.description!='' ||item.price!='') && 
+                     <div className="carousel-texto" style={{ fontSize, textAlign: textAlignment }}>
+                        {item.title!='' &&<p style={{TitlefontSize}}>{item.title}</p>}
+                        {item.description!='' && <p>{item.description}</p>}
+                        {item.price!=''  && <p>{item.price}</p>}
+                     </div>}
                 </article>
             ))}
         </div>
