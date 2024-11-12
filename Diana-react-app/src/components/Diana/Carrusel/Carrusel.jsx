@@ -10,7 +10,8 @@ const Carousel = ({
     textAlignment = 'center', 
     titleFontSize = '20px', 
     // hoverEffect = false,     //sinEfecto por defecto
-    titleColor = '#000000'  //negro por defecto
+    titleColor = '#000000',  //negro por defecto
+    titleFontWeight = '600'
 }) => {
     return (
         <div className="carousel">
@@ -24,7 +25,7 @@ const Carousel = ({
                     
                      {(item.title!='' ||item.description!='' ||item.price!='') && 
                      <div className="carousel-texto" style={{ fontSize, textAlign: textAlignment }}>
-                        {item.title!='' &&<p style={{TitlefontSize}}>{item.title}</p>}
+                        {item.title!='' &&<p style={{ fontSize: titleFontSize, color: titleColor, fontWeight: titleFontWeight}}>{item.title}</p>}
                         {item.description!='' && <p>{item.description}</p>}
                         {item.price!=''  && <p>{item.price}</p>}
                      </div>}

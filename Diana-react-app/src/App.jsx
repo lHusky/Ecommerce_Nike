@@ -9,34 +9,13 @@ import Carrusel from'./components/Diana/Carrusel/Carrusel.jsx'
 function App() {
 
   const productos_crs1 = [
-    { image: '../../../../public/carrusel1/producto1_carrusel1.png', 
-        title: 'Nike V2K Run', 
-        description: 'Zapatillas para mujer',
-        price:'S/ 599.90' },
-    { image: '../../../../public/carrusel1/producto2_carrusel1.png', 
-        title: 'Nike V2K Run', 
-        description: 'Zapatillas para hombre',
-        price:'S/ 569.90' },
-    { image: '../../../../public/carrusel1/producto3_carrusel1.png', 
-        title: 'Nike Zoom Vomero 5', 
-        description: 'Zapatillas para mujer',
-        price:'S/ 789.90' },
-    { image: '../../../../public/carrusel1/producto4_carrusel1.png', 
-        title: 'Nike Zoom Vomero 5', 
-        description: 'Zapatillas para hombre',
-        price:'S/ 749.90' },
-    { image: '../../../../public/carrusel1/producto5_carrusel1.png', 
-        title: 'Nike Air Force 1 Dance', 
-        description: 'Zapatillas para mujer',
-        price:'S/ 679.90' },
-    { image: '../../../../public/carrusel1/producto6_carrusel1.png', 
-        title: 'Nike Cortez Leather', 
-        description:'Zapatillas para mujer',
-        price:'S/ 399.90' },
-    { image: '../../../../public/carrusel1/producto7_carrusel1.png', 
-        title: 'Nike Court Royale 2 Low', 
-        description:  'Zapatillas para hombre',
-        price:'S/ 229.90' }
+    { image: '../../../../public/carrusel1/producto1_carrusel1.png', title: 'Nike V2K Run', description: 'Zapatillas para mujer',price:'S/ 599.90' },
+    { image: '../../../../public/carrusel1/producto2_carrusel1.png', title: 'Nike V2K Run', description: 'Zapatillas para hombre',price:'S/ 569.90' },
+    { image: '../../../../public/carrusel1/producto3_carrusel1.png', title: 'Nike Zoom Vomero 5', description: 'Zapatillas para mujer',price:'S/ 789.90' },
+    { image: '../../../../public/carrusel1/producto4_carrusel1.png', title: 'Nike Zoom Vomero 5', description: 'Zapatillas para hombre',price:'S/ 749.90' },
+    { image: '../../../../public/carrusel1/producto5_carrusel1.png', title: 'Nike Air Force 1 Dance', description: 'Zapatillas para mujer',price:'S/ 679.90' },
+    { image: '../../../../public/carrusel1/producto6_carrusel1.png', title: 'Nike Cortez Leather', description:'Zapatillas para mujer',price:'S/ 399.90' },
+    { image: '../../../../public/carrusel1/producto7_carrusel1.png', title: 'Nike Court Royale 2 Low', description:  'Zapatillas para hombre',price:'S/ 229.90' }
 ];
 
 
