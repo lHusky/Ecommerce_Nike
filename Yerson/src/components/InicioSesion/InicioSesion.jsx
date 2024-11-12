@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './InicioSesion.css';
-import Logo from '../../../assets/logo_nikes.png';
-import Jump from '../../../assets/JumpLogoNike.png';
+import Logo from '../../assets/logo_nikes.png';
+import Jump from '../../assets/JumpLogoNike.png';
 
-const IniciarSesion = () => {
+const Body = () => {
+
   return (
         <div class="parte1">
             <div class="parte2">
                 <div class="parte3">
                     <div class="parte4">
-                        <a href="https://www.nike.com.pe/home" class="imagen1"><img src={Logo} alt="Logo" /></a>
-                        <a href="https://www.nike.com.pe/home" class="imagen2"><img src={Jump} alt="Logo Jump" /></a>
+                        <img src={Logo} alt="Logo Nike" className='imagen1'/>
+                        <img src={Jump} alt="Logo Jump" className='imagen2'/>
                     </div>
                     <span class="Titulo">Ingresa tu correo electrónico para unirte o iniciar sesión.</span>
                     <div>
@@ -18,7 +19,8 @@ const IniciarSesion = () => {
                             <div class="PaisCambio">
                                 <span class="Pais">Perú</span>
                                 <label for="pais" class="Cambiar">Cambiar</label>
-                                <select class="menuPais" id="pais" name="menuPaises" required="" aria-required="true" autocomplete="pais">
+                                <select class="form-control select-country" id="country" name="dwfrm_profile_country_countryCode" required="" aria-required="true" autocomplete="country">
+                                    <option id="" value="Cambiar">Cambiar</option>
                                     <option id="af" value="Afganistán">Afganistán</option>
                                     <option id="al" value="Albania">Albania</option>
                                     <option id="dz" value="Argelia">Argelia</option>
@@ -256,22 +258,12 @@ const IniciarSesion = () => {
                                     <option id="zm" value="Zambia">Zambia</option>
                                     <option id="zw" value="Zimbabue">Zimbabue</option>
                                     <option id="OTHER" value="Otro">Otro</option>
-                                </select>
+            </select>
                             </div>
                             <div class="Correo">
-                                <label for="email" class="colorCorreo">* Correo Electrónico</label>
+                                <label for="email">* Correo Electrónico</label>
                                 <input type="email" id="email" placeholder="tuemail@ejemplo.com" required/>
                             </div>
-                            <div class="Terminos">
-                                <p class="textoTerminos">
-                                <span>Inicia sesión y obtén <strong>envíos gratis</strong> ⚡ Al continuar, aceptas la</span>&nbsp;
-                                <a class="link" href="https://www.nike.com.pe/politicas-de-privacidad.html" target="_blank">Política de Privacidad</a>&nbsp;
-                                <span>y los</span>&nbsp;
-                                <a class="link" href="https://www.nike.com.pe/terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>&nbsp;
-                                <span>de Nike.com.pe</span>
-                                </p>
-                            </div>
-                            <button type="submit" class="botonContinuar">Continuar</button>
                         </form>
                     </div>
                 </div>
@@ -280,4 +272,4 @@ const IniciarSesion = () => {
   );
 };
 
-export default IniciarSesion;
+export default Body;

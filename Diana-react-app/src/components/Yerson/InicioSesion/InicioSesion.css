@@ -1,47 +1,175 @@
-body{
-    height: 468px;
-    width: 921px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@300&display=swap');
+
+
+
+/* .IniciarSesion {
+    height: 489px; 
+    width: 100%; 
     margin: 0;
-    padding: 0;
+    padding-left: 24px; 
+    padding-right: 24px; 
     box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+} */
+
+
+.parte1 {
+    margin-top: 16px;
+    height: 489px; 
+    width: 100%; 
+    display: flex;
+    justify-content: center ;
 }
 
-.parte1{
-    margin-top: 15px;
-    padding-left:48px;
-    padding-right: 48px;
-    height: 468px;
-    width: 825px;
-}
 
-.parte2{
+.parte2 {
     justify-content: center;
     align-content: center;
     display: flex;
+    height: 489px; 
+    width: 100%;    
 }
 
-.parte3{
-    padding: 24px   ;
+
+.parte3 {
+    max-width: 364px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+
+.parte4 {
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap; 
+    gap: 8px;
+    width: 388px 
+    
+}
+
+.imagen1 img{
+    display: inline-block;
+    width: 43px; /* Ajusta el ancho según el tamaño de los logos en la imagen */
+    height: 16px; /* Ajusta el alto para mantener proporción */
+    overflow: hidden; /* Asegura que no haya desbordamiento de la imagen */
+    padding-top: 10px;
+}
+
+.imagen2 img {
+    display: inline-block;
+    width: 36px; /* Ajusta el ancho según el tamaño de los logos en la imagen */
+    height: 33px; /* Ajusta el alto para mantener proporción */
+    overflow: hidden; /* Asegura que no haya desbordamiento de la imagen */
+}
+
+
+.PaisCambio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.PaisCambio .Pais {
+    color: #333;
+    font-size: 19px;
+}
+
+.PaisCambio .Cambiar {
+    cursor: pointer;
+    color: #757575;
+    text-decoration: underline;
+    font-size: 19px;
+}
+
+.menuPais {
+    display: none; 
+}
+
+/* Mostrar el select al hacer clic en "Cambiar" */
+.PaisCambio .Cambiar:focus + .menuPais,
+.PaisCambio .menuPais:focus {
+    display: inline-block;
+}
+
+.Titulo {
+    font-size: 28px;
+    font-weight: 400;
+    font-family: Helvetica Neue;
+    line-height: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.Correo{
+    margin-bottom: 16px;
     display: flex;
     flex-direction: column;
 }
 
-.parte4{
-    display: flex;
-    margin-top: 16px;
-    margin-bottom: 16px;
+form .Correo label {
+    margin-top: 10px;
+    color:#757575;
+    font-size: 12px;
+    padding-left: 20px;
 }
 
-.imagen1{
-height: 50px;
-width: 100px;
+.Correo input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc; /* Borde gris claro por defecto */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f0f8ff; /* Color de fondo similar al de la imagen */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Transición suave para el borde */
 }
 
-.imagen2{
-    height: 50px;
-    width: 50px;
+.Correo input:focus {
+    border: 1px solid black; /* Borde negro cuando el input está en foco */
+    outline: none; /* Quita el borde de enfoque del navegador */
 }
 
-span{
-    margin-bottom: 20px;
+.Correo input:hover {
+    border: 1px solid black; 
 }
+
+.Terminos{
+    margin-top: 55px;
+}
+
+.Terminos span{
+    color: #757575;
+}
+
+.Terminos a {
+    text-decoration: underline;
+    color: #757575 ; 
+    opacity: inherit;
+}
+
+.botonContinuar {
+    margin-top: 28px;
+    margin-left: 255px;
+    background-color: black; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    font-family: Arial, sans-serif; 
+    transition: background-color 0.3s ease; 
+}
+
+.botonContinuar:hover {
+    background-color: #757575;
+}
+
