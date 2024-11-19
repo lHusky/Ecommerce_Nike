@@ -3,11 +3,13 @@
 
 .carousel {
     display: flex;
+    justify-content: center;
 }
 
 .carousel-objeto {
     display: block;
     margin-right: 13px;
+    
     
 }
 .carousel-imagen{

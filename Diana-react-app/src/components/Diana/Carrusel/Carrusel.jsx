@@ -12,16 +12,31 @@ const Carousel = ({
     titleFontSize = '16px', 
     // hoverEffect = false,     //sinEfecto por defecto
     titleColor = '#000000',  //negro por defecto
-    titleFontWeight = '600'
+    titleFontWeight = '600',
+    elementAlign="flex-start"
 }) => {
+
+
+
+    const handleProductClick = async (id) => {
+        try {
+            const response = await fetch(`https://192.168.18.10:4001/producto/${id}`); // Cambia la URL por la tuya
+            const data = await response.json();
+            console.log('Producto seleccionado:', data);
+            // Aquí puedes mostrar los datos en un modal o realizar otra acción
+        } catch (error) {
+            console.error('Error al obtener los detalles del producto:', error);
+        }
+    };
+
     return (
         <div className="carousel">
             {/* recorrer la lista de productos/categorias */}
             {items.map((item, index) => (
+                <a href='#'>
                 <article 
                     key={index} 
-                    className="carousel-objeto"
-                >
+                    className="carousel-objeto">
                     <img src={item.image} alt={item.title} className="carousel-imagen" style={{ width: imageWidth, height: imageHeight }}/>
                     
                      {(item.title!='' ||item.description!='' ||item.price!='') && 
@@ -37,6 +52,7 @@ const Carousel = ({
                         </div>
                     }
                 </article>
+                </a>
             ))}
         </div>
     );

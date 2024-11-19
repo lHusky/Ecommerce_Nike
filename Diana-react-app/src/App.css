@@ -88,8 +88,13 @@ body section article button{
 }
 
 
-.carrusel1{
+.carrusel{
   display: flex;
+}
+
+.carrusel_ult{
+  display: flex;
+  justify-self: center;
 }
 
 
@@ -105,3 +110,11 @@ body section article button{
     cursor: unset; /* Cambia el cursor */
     opacity: 0.2; /* Reduce la opacidad */
 }
+/* .carruselcentrado{
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-self: center;
+  justify-items: center;
+  justify-content: center;
+} */

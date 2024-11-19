@@ -9,13 +9,13 @@ import Carrusel from'./components/Diana/Carrusel/Carrusel.jsx'
 function App() {
 
   const productos_crs1 = [
-    { image: '../../../../public/carrusel1/producto1_carrusel1.png', title: 'Nike V2K Run', description: 'Zapatillas para mujer',price:'S/ 599.90' },
-    { image: '../../../../public/carrusel1/producto2_carrusel1.png', title: 'Nike V2K Run', description: 'Zapatillas para hombre',price:'S/ 569.90' },
-    { image: '../../../../public/carrusel1/producto3_carrusel1.png', title: 'Nike Zoom Vomero 5', description: 'Zapatillas para mujer',price:'S/ 789.90' },
-    { image: '../../../../public/carrusel1/producto4_carrusel1.png', title: 'Nike Zoom Vomero 5', description: 'Zapatillas para hombre',price:'S/ 749.90' },
-    { image: '../../../../public/carrusel1/producto5_carrusel1.png', title: 'Nike Air Force 1 Dance', description: 'Zapatillas para mujer',price:'S/ 679.90' },
-    { image: '../../../../public/carrusel1/producto6_carrusel1.png', title: 'Nike Cortez Leather', description:'Zapatillas para mujer',price:'S/ 399.90' },
-    { image: '../../../../public/carrusel1/producto7_carrusel1.png', title: 'Nike Court Royale 2 Low', description:  'Zapatillas para hombre',price:'S/ 229.90' }
+    { id:1, image: '../../../../public/carrusel1/producto1_carrusel1.png', title: 'Nike V2K Run', description: 'Zapatillas para mujer',price:'S/ 599.90' },
+    { id:2, image: '../../../../public/carrusel1/producto2_carrusel1.png', title: 'Nike V2K Run', description: 'Zapatillas para hombre',price:'S/ 569.90' },
+    { id:3, image: '../../../../public/carrusel1/producto3_carrusel1.png', title: 'Nike Zoom Vomero 5', description: 'Zapatillas para mujer',price:'S/ 789.90' },
+    { id:4, image: '../../../../public/carrusel1/producto4_carrusel1.png', title: 'Nike Zoom Vomero 5', description: 'Zapatillas para hombre',price:'S/ 749.90' },
+    { id:5, image: '../../../../public/carrusel1/producto5_carrusel1.png', title: 'Nike Air Force 1 Dance', description: 'Zapatillas para mujer',price:'S/ 679.90' },
+    { id:6, image: '../../../../public/carrusel1/producto6_carrusel1.png', title: 'Nike Cortez Leather', description:'Zapatillas para mujer',price:'S/ 399.90' },
+    { id:7, image: '../../../../public/carrusel1/producto7_carrusel1.png', title: 'Nike Court Royale 2 Low', description:  'Zapatillas para hombre',price:'S/ 229.90' }
 ];
 
 const productos_crs2 = [
@@ -23,7 +23,7 @@ const productos_crs2 = [
   { image: '../../../../public/carrusel2/producto2_carrusel2.png', title: 'Prepárate para el verano', description: '',price:'' },
   { image: '../../../../public/carrusel2/producto3_carrusel2.png', title: 'Explora lo último de Jordan', description: '',price:'' },
   { image: '../../../../public/carrusel2/producto4_carrusel2.png', title: 'Lo mejor de Nike Fútbol', description: '',price:'' },
-  { image: '../../../../public/carrusel2/producto4_carrusel2.png', title: 'Lo nuevo de Air Max', description: '',price:'' }
+  { image: '../../../../public/carrusel2/producto5_carrusel2.png', title: 'Lo nuevo de Air Max', description: '',price:'' }
 ];
 
 const productos_crs3 = [
@@ -68,7 +68,7 @@ const productos_crs6 = [
           <button className='bontones_sec1'></button>
           <button className='bontones_sec1_2'></button>
         </article> 
-        <div className='carrusel1'> 
+        <div className='carrusel'> 
           <Carrusel
                 items={productos_crs1}
                 imageWidth="438px"
@@ -76,6 +76,7 @@ const productos_crs6 = [
                 fontSize="16px"
                 textAlignment="left"
                 TitlefontSize="20px"
+              
             />
           </div>
 
@@ -84,7 +85,7 @@ const productos_crs6 = [
           <button className='bontones_sec1'></button>
           <button className='bontones_sec1_2'></button>
         </article>
-        <div className='carrusel2'> 
+        <div className='carrusel'> 
           <Carrusel
                 items={productos_crs2}
                 imageWidth="500px"
@@ -92,7 +93,6 @@ const productos_crs6 = [
                 fontSize="16px"
                 textAlignment="left"
                 titleFontSize="23px"
-                
             />
           </div>
         <article className='artic'>
@@ -100,7 +100,7 @@ const productos_crs6 = [
           <button className='bontones_sec2'></button>
           <button className='bontones_sec2_2'></button>
         </article>
-        <div className='carrusel3'> 
+        <div className='carrusel'> 
           <Carrusel
                 items={productos_crs3}
                 imageWidth="250px"
@@ -108,6 +108,7 @@ const productos_crs6 = [
                 fontSize="16px"
                 textAlignment="left"
                 titleFontSize="16px"
+              
                 
             />
           </div>
@@ -116,7 +117,7 @@ const productos_crs6 = [
           <button className='bontones_sec1' disabled></button>
           <button className='bontones_sec1_2' disabled></button>
         </article>
-        <div className='carrusel4'> 
+        <div className='carrusel'> 
           <Carrusel
                 items={productos_crs4}
                 imageWidth="465px"
@@ -124,14 +125,14 @@ const productos_crs6 = [
                 fontSize="16px"
                 textAlignment="left"
                 titleFontSize="16px"
-                
+              
             />
           </div>
         <article className='artic'>
           <button className='bontones_sec2'></button>
           <button className='bontones_sec2_2'></button>
         </article>
-        <div className='carrusel5'> 
+        <div className='carrusel'> 
           <Carrusel
                 items={productos_crs5}
                 imageWidth="250px"
@@ -139,12 +140,13 @@ const productos_crs6 = [
                 fontSize="16px"
                 textAlignment="left"
                 TitlefontSize="20px"
+              
             />
           </div>
         <article className='artic'>
           <h3>Nike Membership</h3>
         </article>
-        <div className='carrusel6'> 
+        <div className='carrusel_ult'> 
           <Carrusel
                 items={productos_crs6}
                 imageWidth="252px"
@@ -152,6 +154,8 @@ const productos_crs6 = [
                 fontSize="16px"
                 textAlignment="left"
                 TitlefontSize="20px"
+                className='carruselcentrado'
+                elementAlign="center"
             />
           </div>
       </section>
