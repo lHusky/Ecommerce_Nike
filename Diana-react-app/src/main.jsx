@@ -6,6 +6,7 @@ import App from './App.jsx'
 import CarritoPage from './routes/CarritoPage.jsx'
 import CheckoutPage from './routes/CheckoutPage.jsx'
 import IniciarSesionPage from './routes/IniciarSesionPage.jsx'
+import RegistrarsePage from './routes/RegistrarsePage.jsx'
 const router = createBrowserRouter([
   {
     path:"/",
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/iniciarSesion",
-    element: <IniciarSesionPage/> //TAREA DE YERSON 
+    element: <RegistrarsePage/> //TAREA DE YERSON 
   }
 
 ])

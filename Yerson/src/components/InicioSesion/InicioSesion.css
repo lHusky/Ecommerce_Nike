@@ -65,7 +65,9 @@ body {
     max-width: 100%;
 }
 
-span {
+
+
+.Titulo {
     font-size: 28px;
     font-weight: 400;
     font-family: Helvetica Neue;

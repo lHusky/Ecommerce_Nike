@@ -121,7 +121,7 @@ form .Correo label {
     border: 1px solid black; /* Borde negro cuando el input está en foco */
     outline: none; /* Quita el borde de enfoque del navegador */
 }
-
+    
 .Correo input:hover {
     border: 1px solid black; 
 }
@@ -157,4 +157,3 @@ form .Correo label {
 .botonContinuar:hover {
     background-color: #757575;
 }
-
