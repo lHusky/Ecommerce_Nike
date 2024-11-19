@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
-// import docenteRouter from './src/routes/docente.js';   
+import productoRouter from './src/routes/producto.js';   
 
 
 const app = express();
@@ -13,7 +13,7 @@ app.get('/', (req, resp) => {
     return resp.send('Hello World');
 })
 
-// app.use('/docente', docenteRouter);
+app.use('/producto', productoRouter);
 
 
 app.listen(4001,() => {
