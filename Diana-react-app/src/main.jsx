@@ -8,6 +8,7 @@ import CheckoutPage from './routes/CheckoutPage.jsx'
 import IniciarSesionPage from './routes/IniciarSesionPage.jsx'
 import RegistrarsePage from './routes/RegistrarsePage.jsx'
 import GuestCheckoutPage from './routes/guestCheckoutPage.jsx'
+import ProductoPage from './routes/ProductoPage.jsx'
 const router = createBrowserRouter([
   {
     path:"/",
@@ -27,8 +28,16 @@ const router = createBrowserRouter([
   },
   {
     path:"/iniciarSesion",
+    element: <IniciarSesionPage/> //TAREA DE YERSON 
+  },
+  {
+    path:"/registro",
     element: <RegistrarsePage/> //TAREA DE YERSON 
-  }
+  },
+  {
+    path: "/PaginaProducto/:id",  
+    element: <ProductoPage/> 
+  },
 
 ])
 
@@ -40,7 +49,3 @@ createRoot(document.getElementById('root')).render(
   
   </StrictMode>,
 )
-
-
-
-

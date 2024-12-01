@@ -17,44 +17,7 @@ body section article button{
     align-self: center;
     left: 0%;
 }
-.bontones_sec1{
-    background-color: #E5E5E5;
-    border-radius: 50%;
-    height: 45px;
-    width: 45px;
-    background-size: 50% 60%; /* Tamaño de la imagen dentro del área de fondo */
-    background-position: center; /* Centra la imagen en el área de fondo */
-    border: none;
-    background-repeat: no-repeat; 
-    background-image: url('./assets/anterior.png'); /*anterior*/
-    cursor: pointer;
-    margin-left: auto;
-   
 
-  }
-  
-  .bontones_sec1:hover{
-      background-color: #CCCCCC;
-  }
-  
-
-.bontones_sec1_2{
-  background-color: #E5E5E5;
-  border-radius: 50%;
-  height: 45px;
-  width: 45px;
-  background-size: 50% 60%; /* Tamaño de la imagen dentro del área de fondo */
-  background-position: center; /* Centra la imagen en el área de fondo */
-  border: none;
-  background-repeat: no-repeat; 
-  background-image: url('./assets/proximo.png');
-  cursor: pointer;
-  margin-left: 10px
-}
-
-.bontones_sec1_2:hover{
-    background-color: #CCCCCC;
-}
 
 
 
@@ -90,6 +53,7 @@ body section article button{
 
 .carrusel{
   display: flex;
+  margin-top: 30px;
 }
 
 .carrusel_ult{

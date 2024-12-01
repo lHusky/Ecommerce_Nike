@@ -1,8 +1,9 @@
 // Carousel.js
-import React from 'react';
+import React,{useState} from 'react';
 import './Carrusel.css';
 
 const Carousel = ({ 
+    titulo,
     items, 
     imageWidth, 
     imageHeight, 
@@ -10,50 +11,76 @@ const Carousel = ({
     fontColor="#959595",
     textAlignment = 'center', 
     titleFontSize = '16px', 
-    // hoverEffect = false,     //sinEfecto por defecto
+    siButton=true,
     titleColor = '#000000',  //negro por defecto
     titleFontWeight = '600',
-    elementAlign="flex-start"
+    buttonPosition = 'fuera'  // o dentro
 }) => {
 
+    const [itemActual, setItemActual] = useState(0);
+    const maxItem = items.length - 1;
 
-
-    const handleProductClick = async (id) => {
-        try {
-            const response = await fetch(`https://192.168.18.10:4001/producto/${id}`); // Cambia la URL por la tuya
-            const data = await response.json();
-            console.log('Producto seleccionado:', data);
-            // Aquí puedes mostrar los datos en un modal o realizar otra acción
-        } catch (error) {
-            console.error('Error al obtener los detalles del producto:', error);
-        }
+    const handleSiguiente = () => {
+        if (itemActual < maxItem) setItemActual(itemActual + 1);
     };
 
+    const handleAnterior = () => {
+        if (itemActual > 0) setItemActual(itemActual - 1);
+    };
+   
     return (
-        <div className="carousel">
-            {/* recorrer la lista de productos/categorias */}
-            {items.map((item, index) => (
-                <a href='#'>
-                <article 
-                    key={index} 
-                    className="carousel-objeto">
-                    <img src={item.image} alt={item.title} className="carousel-imagen" style={{ width: imageWidth, height: imageHeight }}/>
-                    
-                     {(item.title!='' ||item.description!='' ||item.price!='') && 
-                        <div className='division-texto'> 
-                            <div className="carousel-texto" style={{ fontSize, textAlign: textAlignment }}>
-                                {item.title!='' &&<p style={{ fontSize: titleFontSize, color: titleColor, fontWeight: titleFontWeight}}>{item.title}</p>}
-                                {item.description!='' && <p style={{color:fontColor}}>{item.description}</p>}
-                            </div>
-                        
-                            <div className='division-precio'>
-                                {item.price!=''  && <p>{item.price}</p>}
-                            </div>
+        <div className='divCarrousel'>
+            {siButton?
+            <div>
+                {buttonPosition === 'fuera' ? (
+                    <article>
+                        <h3>{titulo}</h3>
+                        <div className="outside-buttons">
+                            <button onClick={handleAnterior} disabled={itemActual === 0} className='out-botonAnterior'></button>
+                            <button onClick={handleSiguiente} disabled={itemActual === maxItem} className='out-botonPosterior'></button>
                         </div>
-                    }
-                </article>
-                </a>
-            ))}
+                    </article>
+                ) : (
+                    <div className="inside-buttons">
+                        <button onClick={handleAnterior} className="left-arrow">◀</button>
+                        <button onClick={handleSiguiente} className="right-arrow">▶</button>
+                    </div>
+                )}
+            </div>:
+            <h3>{titulo}</h3>}
+            <div className="carousel">
+                {/* recorrer la lista de productos/categorias */}
+                {items.map((item, index) => (
+                     <a 
+                     key={index} 
+                     href={`/PaginaProducto/${item.id}`} 
+                     style={{
+                         transform: `translateX(-${(itemActual) * 100}%)`, // Desplazamiento dinámico
+                         transition: 'transform 0.5s ease-in-out', // Transición suave
+                         display: 'inline-block', 
+                     }}
+                     className={`carousel-item ${index === itemActual ? 'active' : ''}`} // Agrega clases dinámicas si es necesario
+                     >
+                    <article 
+                        key={index} 
+                        className="carousel-objeto">
+                        <img src={item.image} alt={item.title} className="carousel-imagen" style={{ width: imageWidth, height: imageHeight }}/>
+                        
+                        {(item.title!='' ||item.description!='' ||item.price!='') && 
+                            <div className='division-texto'> 
+                                <div className="carousel-texto" style={{ fontSize, textAlign: textAlignment }}>
+                                    {item.title!='' &&<p style={{ fontSize: titleFontSize, color: titleColor, fontWeight: titleFontWeight}}>{item.title}</p>}
+                                    {item.description!='' && <p style={{color:fontColor}}>{item.description}</p>}
+                                </div>
+                            
+                                <div className='division-precio'>
+                                    {item.price!=''  && <p>{item.price}</p>}
+                                </div>
+                            </div>}
+                    </article>
+                    </a>
+                ))}
+            </div>
         </div>
     );
 };

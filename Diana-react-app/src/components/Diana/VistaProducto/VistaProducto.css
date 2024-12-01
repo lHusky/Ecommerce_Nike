@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.bontones_sec1[disabled],
+.bontones_sec1_2[disabled] {
+    background-color: #ccc; /* Cambia el color de fondo */
+    color: #666; /* Cambia el color de texto */
+    cursor: unset; /* Cambia el cursor */
+    opacity: 0.2; /* Reduce la opacidad */
+}
+.divHeadercarrusel{
+    display: flex;
+    margin-top: 140px;
+}
+.divcarrusel{
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+.textCarrusel{
+    font-size: 25px;
+    font-family: "Heebo", sans-serif;
+}
+.carrusel {
+    display: flex;
+    /* overflow: hidden; Oculta elementos fuera del área visible */
+
+    position: relative; /* Posiciona el contenedor para manejar flechas si es necesario */
+    width: 100%; /* Asegúrate de que el carrusel ocupe todo el ancho disponible */
+}
+
+.vista-producto {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: "Heebo", sans-serif;
+    display: flex;
+    gap: 55px;
+}
+
+.producto-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* gap: 20px; */
+}
+
+.producto-nombre {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: black;
+    margin-top: 40px;
+    
+}
+
+.producto-categoria {
+    margin: 0;
+    font-size: 16px;
+    color: black;
+    font-weight: 400;
+}
+
+.producto-precio {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    margin-top: 28px;
+}
+
+
+.producto-estilo {
+    margin-top: 28px;
+    align-items: center;
+    gap: 10px;
+}
+
+.estilo-imagen {
+    width: 70px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.estilo-imagen:hover {
+    border: 1px solid black;
+}
+
+.Texto-Tallas{
+    margin-top: 28px;
+    display: flex;
+    margin: 0;
+    gap:68px
+}
+.producto-talla-texto {
+    font-size: 16px;
+    color: #000000;
+}
+
+.producto-guia-tallas {
+    align-self: center;
+    font-size: 14px;
+    color: #757575;
+    text-decoration: none;
+}
+
+.producto-tallas {
+    gap: 10px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  /* Crea 5 columnas de tamaño igual */
+    gap: 8px;  /* Espacio entre las filas y las columnas */
+    
+}
+
+.producto-boton-talla {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    text-justify: center;
+    text-align: center;
+    height: 48px;
+    width: 54px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.producto-boton-talla:hover {
+    border: 1px solid black;
+}
+
+
+.producto-botones {
+    padding-top: 10px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); 
+    gap: 10px;
+    font-family: "Heebo", sans-serif;
+}
+
+.boton-agregar{
+    background-color: #000000;
+    border: none;
+    padding: 20px 80px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 100%;
+    font-weight: 600; 
+}
+.boton-agregar-desact{
+    background-color: #bdbdbd;
+    border: none;
+    padding: 20px 80px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 100%;
+    font-weight: 600; 
+    cursor: not-allowed;
+
+    
+}
+
+.boton-favoritos{
+    background-color: #ffffff;
+    border: none;
+    padding: 20px 80px;
+    border: 1px solid #b5b5b5;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+
+    font-weight: 500;
+
+}
+
+.boton-agregar:hover {
+    background-color: #585858;
+}
+.boton-favoritos:hover{
+    border: 1px solid #000000;
+}
+.producto-imagenes-demostracion {
+    gap: 10px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+}
+
+.producto-imagen-link {
+    cursor: pointer;
+}
+
+.producto-imagen-demo {
+    width: 390px;
+    height: 390px;
+    border-radius: 5px;
+}
+
+
+.producto-descripcion {
+    font-size: 15px;
+    color: #333;
+    margin-top: 30px;
+}
+
+.producto-detalles {
+    font-size: 15px;
+    color: #333;
+    margin-top: 10px;
+    /* list-style: none; */
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+.producto-detalles li {
+    margin-bottom: 5px;
+}
+
+.producto-detalles li:last-child {
+    margin-bottom: 0;
+}
