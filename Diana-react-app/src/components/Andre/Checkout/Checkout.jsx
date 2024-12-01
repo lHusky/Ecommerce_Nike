@@ -1,29 +1,49 @@
-import './Checkout.css'
+import React from 'react';
+import './Checkout.css';
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
-<div class="finalizar-compra-container">
-  <div class="finalizar-compra-header">
-    <div>Elige cómo te gustaría finalizar tu compra</div>
-    <div class="contact-info">0-800-80600 | Whatsapp</div>
-  </div>
+  const navigate = useNavigate();
 
-  <div class="opciones-compra">
-    <div class="opcion">
-      <h2>Finaliza tu compra como miembro para conseguir el envío gratuito</h2>
-      <p>Utiliza tus credenciales de miembro de Nike para acceder a Nike.com.pe</p>
-      <p class="nota">Al iniciar sesión, aceptas la Política de Privacidad y los Términos de uso de Nike.</p>
-      <button class="boton boton-negro">Iniciar sesión</button>
-      <button class="boton boton-negro">Registrarse</button>
+  const handleLogin = () => {
+    navigate('/iniciarSesion');
+  };
+
+  const handleSignUp = () => {
+    navigate('/');
+  };
+
+  const handleGuestCheckout = () => {
+    navigate('/guest-checkout');
+  };
+
+  return (
+    <div className="checkout-container">
+      <h1>Choose How You Would Like To Check out</h1>
+      <div className="checkout-options">
+        {/* Member section */}
+        <div className="member-section">
+          <h2>Check out as a member and get free shipping on orders $50+</h2>
+          <p>
+            Use your NikePlus member login for Nike.com, NRC, NTC, SNKRS or the Nike app.
+          </p>
+          <button onClick={handleLogin} className="action-button">Iniciar Sesión</button>
+          <button onClick={handleSignUp} className="action-button">Registrarse</button>
+        </div>
+
+        {/* Guest section */}
+        <div className="guest-section">
+          <h2>Continuar como invitado</h2>
+          <p>
+            You can create a free Nike Member Profile at any point during the checkout process.
+          </p>
+          <button onClick={handleGuestCheckout} className="action-button guest-button">
+            Checkout Invitado
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="opcion">
-      <h2>Finalizar la compra como invitado</h2>
-      <p>Puedes comprar sin crear una cuenta. Tendrás la oportunidad de crear una cuenta de miembro de Nike.com.pe de forma gratuita luego.</p>
-      <button class="boton boton-blanco">Compra como invitado</button>
-    </div>
-  </div>
-</div>
-
-}
-
+  );
+};
 
 export default Checkout;

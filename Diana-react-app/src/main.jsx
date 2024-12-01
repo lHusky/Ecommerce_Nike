@@ -7,6 +7,7 @@ import CarritoPage from './routes/CarritoPage.jsx'
 import CheckoutPage from './routes/CheckoutPage.jsx'
 import IniciarSesionPage from './routes/IniciarSesionPage.jsx'
 import RegistrarsePage from './routes/RegistrarsePage.jsx'
+import GuestCheckoutPage from './routes/guestCheckoutPage.jsx'
 const router = createBrowserRouter([
   {
     path:"/",
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path:"/checkout",
     element: <CheckoutPage/> //TAREA DE ANDRE 
+  },
+  {
+    path:"/guest-checkout",
+    element: <GuestCheckoutPage/> //TAREA DE ANDRE 
   },
   {
     path:"/iniciarSesion",

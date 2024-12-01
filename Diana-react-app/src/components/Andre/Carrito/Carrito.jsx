@@ -17,7 +17,7 @@ const Carrito = () => {
   
           <div className="favoritos">
             <p>Favoritos</p>
-            <p>¿Quieres ver tus favoritos? <a href="#">Únete</a> o <a href="#">Inicia Sesión</a></p>
+            <p>¿Quieres ver tus favoritos? <a href="#">Únete</a> o <a href="/iniciarSesion">Inicia Sesión</a></p>
           </div>
   
           <div className="resumen">
