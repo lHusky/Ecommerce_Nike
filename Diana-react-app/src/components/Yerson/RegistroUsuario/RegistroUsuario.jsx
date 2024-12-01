@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Logo from '../../../assets/logo_nikes.png';
 import Jump from '../../../assets/JumpLogoNike.png';
+import Reenviar from '../../../assets/Reenviar.png';
+import Ver from '../../../assets/Ver.png';
+import './RegistroUsuario.css';
 
 const RegistroUsuario = () => {
   return (
@@ -22,9 +25,39 @@ const RegistroUsuario = () => {
                                 <a class="link" href="/iniciarSesion">Editar</a>
                             </div>
                             <div class="Codigo">
-                                <label for="email" class="colorCodigo">* Correo Electrónico</label>
-                                <input type="text" id="email" placeholder="tuemail@ejemplo.com" required/>
+                                <label class="colorCodigo">* Codigo</label>
+                                <input type="text" required/>
+                                <button class="ReenviarCodigo">
+                                  <img src={Reenviar} alt="Logo Reenviar" />
+                                </button>
+                                <div class="resend-msg"> Reenviar código en <span id="contador">30</span> s</div>
                             </div>
+                            <div class="NombreApellido">
+                                <div class="Nombre">
+                                    <label class="colorNombre">* Nombre</label>
+                                    <input type="text" required/>
+                                </div>
+                                <div class="Apellido">
+                                    <label class="colorApellido">* Apellido</label>
+                                    <input type="text" required/>
+                                </div>
+                            </div>
+                            <div class="Contraseña">
+                                <label class="colorContraseña">* Contraseña</label>
+                                <input type="text" required/>
+                                <button class="verContraseña">
+                                  <img src={Ver} alt="VERcontraseña" />
+                                </button>    
+                            </div>
+                            <div class="condiciones">
+                                <div class="condicion condicion1">
+                                  ✘ <span>Mínimo de 8 caracteres</span>
+                                </div>
+                                <div class="condicion condicion2">
+                                  ✘ <span>Mayúsculas, minúsculas y un número</span>
+                                </div>
+                            </div>  
+                    
                             <div class="Terminos">
                                 <p class="textoTerminos">
                                 <span>Inicia sesión y obtén <strong>envíos gratis</strong> ⚡ Al continuar, aceptas la</span>&nbsp;

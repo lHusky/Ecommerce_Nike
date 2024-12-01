@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    
+    box-sizing: border-box;
 }
 
 
@@ -53,107 +53,192 @@
     overflow: hidden; /* Asegura que no haya desbordamiento de la imagen */
 }
 
+.Correo{
+    display: flex;
+    flex-direction: inherit;
+    gap: 10px;
+}
 
-.PaisCambio {
+.Codigo, .Nombre, .Apellido {
+    position: relative;
+    border: 1px solid #ccc; /* Borde por defecto */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 10px;
+    width: 100%; /* Ajusta al ancho del contenedor */
+    box-sizing: border-box; /* Incluye padding en el ancho */
+    transition: border-color 0.3s ease; /* Transición para el borde */
 }
 
-.PaisCambio .Pais {
-    color: #333;
-    font-size: 19px;
+/* Cambia el borde a negro cuando se pasa el cursor */
+.Codigo:hover, .Nombre:hover, .Apellido:hover {
+    border-color: black;
 }
 
-.PaisCambio .Cambiar {
-    cursor: pointer;
-    color: #757575;
-    text-decoration: underline;
-    font-size: 19px;
-}
-
-.menuPais {
-    display: none; 
-}
-
-/* Mostrar el select al hacer clic en "Cambiar" */
-.PaisCambio .Cambiar:focus + .menuPais,
-.PaisCambio .menuPais:focus {
-    display: inline-block;
-}
-
-.Titulo {
-    font-size: 28px;
-    font-weight: 400;
-    font-family: Helvetica Neue;
-    line-height: 2rem;
-    margin-bottom: 1.25rem;
-}
-
-.Correo{
-    margin-bottom: 16px;
-    display: flex;
-    flex-direction: column;
-}
-
-form .Correo label {
-    margin-top: 10px;
-    color:#757575;
-    font-size: 12px;
-    padding-left: 20px;
-}
-
-.Correo input {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc; /* Borde gris claro por defecto */
-    border-radius: 8px; /* Bordes redondeados */
-    background-color: #f0f8ff; /* Color de fondo similar al de la imagen */
+/* Contenedor de Nombre y Apellido */
+.NombreApellido {
+    display: flex; /* Alinea los campos en una fila horizontal */
+    gap: 10px; /* Espacio entre los campos */
+    width: 100%; /* Asegura que los campos ocupen el ancho disponible */
     box-sizing: border-box;
-    transition: border-color 0.3s ease; /* Transición suave para el borde */
 }
 
-.Correo input:focus {
-    border: 1px solid black; /* Borde negro cuando el input está en foco */
-    outline: none; /* Quita el borde de enfoque del navegador */
-}
-    
-.Correo input:hover {
-    border: 1px solid black; 
-}
-
-.Terminos{
-    margin-top: 55px;
+/* Inputs */
+.Codigo input, .Nombre input, .Apellido input {
+    border: none; /* Sin bordes en el input */
+    outline: none; /* Sin borde de enfoque del navegador */
+    flex: 1; /* Toma todo el espacio disponible */
+    font-size: 16px;
+    padding: 0;
+    width: 100%; /* Ajusta el input al contenedor */
+    box-sizing: border-box;
 }
 
-.Terminos span{
-    color: #757575;
+/* Labels */
+.colorCodigo, .colorNombre, .colorApellido {
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    left: 15px; /* Espaciado desde el borde izquierdo */
+    transform: translateY(-50%); /* Ajusta para un centrado perfecto */
+    background: white; /* Fondo blanco para que no se superponga */
+    color: gray; /* Color gris */
+    font-size: 16px; /* Tamaño normal */
+    padding: 0 5px; /* Espaciado */
+    transition: all 0.3s ease; /* Transición para animar los cambios */
+    pointer-events: none; /* Evita que el label interfiera */
 }
 
-.Terminos a {
-    text-decoration: underline;
-    color: #757575 ; 
-    opacity: inherit;
+/* Cuando el input está en foco */
+.Codigo input:focus ~ .colorCodigo,
+.Codigo input:not(:placeholder-shown) ~ .colorCodigo,
+.Nombre input:focus ~ .colorNombre,
+.Nombre input:not(:placeholder-shown) ~ .colorNombre,
+.Apellido input:focus ~ .colorApellido,
+.Apellido input:not(:placeholder-shown) ~ .colorApellido {
+    top: -10px; /* Mueve hacia arriba */
+    left: 10px; /* Ajusta su posición */
+    font-size: 12px; /* Tamaño más pequeño */
+    color: black; /* Cambia el color a negro */
 }
 
-.botonContinuar {
-    margin-top: 28px;
-    margin-left: 255px;
-    background-color: black; 
-    color: white; 
-    padding: 10px 20px; 
-    border: none; 
-    border-radius: 20px; 
-    font-size: 16px; 
-    cursor: pointer; 
-    font-family: Arial, sans-serif; 
-    transition: background-color 0.3s ease; 
+/* Botón Reenviar Código */
+.Codigo .ReenviarCodigo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor a mano */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
 }
 
-.botonContinuar:hover {
-    background-color: #757575;
+.Codigo .ReenviarCodigo img {
+    width: 20px; /* Ancho del ícono */
+    height: 20px; /* Alto del ícono */
+}
+
+/* Mensaje de reenvío */
+.Codigo .resend-msg {
+    display: none; /* Oculto por defecto */
+    font-size: 12px; /* Tamaño de la fuente */
+    color: gray; /* Color del texto */
+    margin-left: 10px; /* Espacio hacia la derecha */
+}
+
+/* Contenedor de la contraseña */
+.Contraseña {
+    position: relative;
+    border: 1px solid #ccc; /* Borde por defecto */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que padding se incluye en el ancho */
+    transition: border-color 0.3s ease;
+    margin-bottom: 0; /* Sin margen inferior */
+}
+
+/* Cambia el borde a negro cuando se pasa el cursor */
+.Contraseña:hover {
+    border-color: black;
+}
+
+/* Estilo del input */
+.inputContraseña {
+    border: none; /* Sin borde adicional */
+    outline: none; /* Sin borde de enfoque */
+    flex: 1; /* Toma el espacio restante */
+    font-size: 16px;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo del label por defecto */
+.colorContraseña {
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    left: 15px; /* Espaciado desde el borde izquierdo */
+    transform: translateY(-50%); /* Ajusta para un centrado perfecto */
+    background: white; /* Fondo blanco para que no se superponga */
+    color: gray; /* Color gris */
+    font-size: 16px; /* Tamaño normal */
+    padding: 0 5px; /* Espaciado */
+    transition: all 0.3s ease; /* Transición para animar los cambios */
+    pointer-events: none; /* Evita que el label interfiera */
+}
+
+/* Mueve el label hacia arriba cuando el input está enfocado o contiene texto */
+.inputContraseña:focus ~ .colorContraseña,
+.inputContraseña:not(:placeholder-shown) ~ .colorContraseña {
+    top: -10px; /* Mueve hacia arriba */
+    left: 10px; /* Ajusta su posición */
+    font-size: 12px; /* Tamaño más pequeño */
+    color: black; /* Cambia el color a negro */
+}
+
+/* Botón para ver la contraseña */
+.verContraseña {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verContraseña img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Contenedor de las condiciones */
+.condiciones {
+    margin-top: 10px; /* Espaciado entre el campo de contraseña y las condiciones */
+    display: flex;
+    flex-direction: column; /* Asegura que las condiciones estén apiladas verticalmente */
+    gap: 5px; /* Espaciado entre las líneas */
+}
+
+/* Estilo de las condiciones */
+.condicion {
+    font-size: 14px; /* Tamaño del texto */
+    color: gray; /* Texto en gris */
+    display: flex; /* Para alinear el icono con el texto */
+    align-items: center; /* Centra el texto verticalmente */
+}
+
+/* Espaciado entre el icono y el texto */
+.condicion span {
+    margin-left: 5px; /* Espaciado a la derecha del icono */
+}
+
+/* Condiciones cumplidas */
+.condicion.cumplida {
+    color: green; /* Cambia a verde cuando se cumple */
 }
