@@ -8,7 +8,7 @@ const Carrito = () => {
       <div className="carrito-container">
         <div className="header">
           <p>¡EXTENDIMOS! CYBER NIKE: HASTA 50% OFF 🔥</p>
-          <p>Últimos días: Inicia sesión y obtén envíos GRATIS. Compra <a href="#">aquí</a>. <a href="#">Únete</a> o <a href="#">Inicia Sesión</a></p>
+          <p>Últimos días: Inicia sesión y obtén envíos GRATIS. Compra <a href="/">aquí</a>. <a href="/registro">Únete</a> o <a href="/iniciarSesion">Inicia Sesión</a></p>
         </div>
   
         <div className="carrito-content">
@@ -17,7 +17,7 @@ const Carrito = () => {
   
           <div className="favoritos">
             <p>Favoritos</p>
-            <p>¿Quieres ver tus favoritos? <a href="#">Únete</a> o <a href="/iniciarSesion">Inicia Sesión</a></p>
+            <p>¿Quieres ver tus favoritos? <a href="/registro">Únete</a> o <a href="/iniciarSesion">Inicia Sesión</a></p>
           </div>
   
           <div className="resumen">

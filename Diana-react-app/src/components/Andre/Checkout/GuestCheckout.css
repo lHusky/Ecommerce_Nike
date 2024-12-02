@@ -1,57 +1,308 @@
-.checkout-form {
-    width: 50%;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .delivery-options {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .delivery-options label {
-    display: flex;
-    align-items: center;
-  }
-  
-  .delivery-options input[type="radio"] {
-    margin-right: 10px;
-  }
-  
-  .checkout-form label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .checkout-form input[type="text"],
-  .checkout-form input[type="email"],
-  .checkout-form input[type="tel"],
-  .checkout-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 15px;
-  }
-  
-  .checkout-form button {
-    background-color: green;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.checkout-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.checkout-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.delivery-options {
+  flex: 2;
+}
+
+.delivery-method, .address-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  border: 1px solid #000;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.active {
+  background: #000;
+  color: #fff;
+}
+
+.delivery-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.manual-entry {
+  font-size: 12px;
+  color: #0071c2;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.save-continue {
+  background: #ccc;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+}
+
+.cart-summary {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.cart-summary h2 {
+  display: inline-block;
+}
+
+.edit-link {
+  float: right;
+  font-size: 14px;
+  color: #0071c2;
+  text-decoration: underline;
+}
+
+.cart-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.cart-summary li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cart-summary .total {
+  font-weight: bold;
+}
+
+.product-summary {
+  margin-top: 20px;
+}
+
+.product {
+  display: flex;
+  gap: 10px;
+}
+
+.product img {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.product-details {
+  font-size: 14px;
+}
+
+.additional-sections h3 {
+  margin-top: 20px;
+  font-size: 18px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.payment-section {
+  margin-top: 20px;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.billing-country p {
+  font-size: 14px;
+}
+
+.billing-country span {
+  font-weight: bold;
+}
+
+.billing-country a {
+  color: #0071c2;
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.promo-code {
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.payment-method h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.payment-method div {
+  margin-bottom: 10px;
+}
+
+.payment-method input {
+  margin-right: 10px;
+}
+
+.card-details h3 {
+  margin: 20px 0 10px;
+}
+
+.card-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.card-inputs input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.cvv-help {
+  font-size: 12px;
+  color: #0071c2;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.billing-details input, .billing-details select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.city-state {
+  display: flex;
+  gap: 10px;
+}
+
+.city-state input, .city-state select {
+  flex: 1;
+}
+
+.country-region {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.continue-button {
+  background-color: #ccc;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+}
+.billing-country {
+  margin-bottom: 20px;
+}
+
+.billing-country label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.country-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.order-overview {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.order-overview h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.overview-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.overview-item p {
+  font-size: 14px;
+  color: #555;
+}
+
+.overview-item span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.overview-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.overview-total p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.overview-total span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+.place-order-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 0;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.place-order-btn:hover {
+  background-color: #444;
+}

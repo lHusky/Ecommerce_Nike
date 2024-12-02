@@ -1,0 +1,64 @@
+.contenedor-gracias {
+    text-align: center;
+    padding: 50px 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .titulo-gracias {
+    font-size: 36px;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .mensaje-gracias {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 600px;
+  }
+  
+  .detalles-pedido {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 80%;
+    max-width: 500px;
+    text-align: left;
+  }
+  
+  .detalles-pedido h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .detalles-pedido p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  .boton-volver-inicio {
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-volver-inicio:hover {
+    background-color: gray;
+  }
+  

@@ -10,6 +10,8 @@ import RegistrarsePage from './routes/RegistrarsePage.jsx'
 import GuestCheckoutPage from './routes/guestCheckoutPage.jsx'
 import ProductoPage from './routes/ProductoPage.jsx'
 import IngresarContraseña from './components/Yerson/IngresarContraseña/IngresarContraseña.jsx'
+import GraciasPage from './routes/GraciasPage.jsx'
+
 const router = createBrowserRouter([
   {
     path:"/",
@@ -26,6 +28,10 @@ const router = createBrowserRouter([
   {
     path:"/guest-checkout",
     element: <GuestCheckoutPage/> //TAREA DE ANDRE 
+  },
+  {
+    path:"/gracias",
+    element: <GraciasPage/> //TAREA DE ANDRE 
   },
   {
     path:"/iniciarSesion",

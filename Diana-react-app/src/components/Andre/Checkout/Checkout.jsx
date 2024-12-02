@@ -10,7 +10,7 @@ const Checkout = () => {
   };
 
   const handleSignUp = () => {
-    navigate('/');
+    navigate('/registro');
   };
 
   const handleGuestCheckout = () => {
@@ -21,7 +21,7 @@ const Checkout = () => {
     <div className="checkout-container">
       <h1>Choose How You Would Like To Check out</h1>
       <div className="checkout-options">
-        {/* Member section */}
+        {}
         <div className="member-section">
           <h2>Check out as a member and get free shipping on orders $50+</h2>
           <p>
@@ -31,7 +31,7 @@ const Checkout = () => {
           <button onClick={handleSignUp} className="action-button">Registrarse</button>
         </div>
 
-        {/* Guest section */}
+        {}
         <div className="guest-section">
           <h2>Continuar como invitado</h2>
           <p>
