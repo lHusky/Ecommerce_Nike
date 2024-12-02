@@ -1,0 +1,126 @@
+/* Estilo general */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Contenedor principal de Configuración */
+.configuracion {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Menú lateral */
+.menu-lateral {
+  width: 25%;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-lateral li {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-lateral li:hover,
+.menu-lateral li.activo {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+/* Contenido principal */
+.contenido-principal {
+  flex: 1;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.contenido-principal h2 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Formularios */
+.detalle-configuracion {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Botón Guardar */
+.guardar-boton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.guardar-boton:hover {
+  background-color: #0056b3;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .configuracion {
+    flex-direction: column;
+  }
+
+  .menu-lateral {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .contenido-principal {
+    width: 100%;
+    padding: 15px;
+  }
+}

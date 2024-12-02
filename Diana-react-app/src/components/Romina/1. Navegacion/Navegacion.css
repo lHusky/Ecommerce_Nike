@@ -1,26 +1,35 @@
-.perfil-nav-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .perfil-nav {
-    display: flex;
-    gap: 20px; /* Espacio entre enlaces */
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    width: 80%;
-    justify-content: space-evenly;
-  }
-  
-  .perfil-nav-link {
-    text-decoration: none;
-    font-size: 16px;
-    color: #000; /* Negro por defecto */
-    padding: 5px 10px;
-  }
-  
-  .active-link {
-    color: #777; /* Gris cuando está activo */
-  }
-  
+/* Barra de navegación */
+.nav-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Alinea verticalmente */
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd; /* Línea inferior opcional */
+  background-color: #fff;
+}
+
+.nav-container ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Espaciado entre elementos */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-container ul li {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-container ul li a {
+  text-decoration: none;
+  color: inherit;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-container ul li a:hover {
+  background-color: #f0f0f0;
+}

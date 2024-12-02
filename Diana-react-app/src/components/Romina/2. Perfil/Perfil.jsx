@@ -1,28 +1,27 @@
-import React from 'react';
-import Carousel from './Carrusel';
-import './Perfil.css';
+import React from "react";
+import "./Perfil.css";
+import acceso from "../../../assets/carrusel-acceso.jpg";
+import entrenamiento from "../../../assets/carrusel-entrenamiento.jpg";
+import enviogratis from "../../../assets/carrusel-enviogratis.jpg";
+import exclusivo from "../../../assets/carrusel-productoexclusivo.jpg";
 
 const Perfil = () => {
   const benefits = [
     {
-      image: '/assets/carrusel-enviogratis.jpg',
-      title: 'Envío gratis',
-      description: 'Disfruta del envío gratuito en tus compras.',
+      image: enviogratis,
+      title: "Envío gratis",
     },
     {
-      image: '/assets/carrusel-productoexclusivo.jpg',
-      title: 'Producto exclusivo',
-      description: 'Acceso a productos exclusivos.',
+      image: exclusivo,
+      title: "Producto exclusivo",
     },
     {
-      image: '/assets/carrusel-entrenamiento.jpg',
-      title: 'Apps de entrenamiento',
-      description: 'Accede a apps gratuitas para entrenamiento.',
+      image: entrenamiento,
+      title: "Apps de running y entrenamiento gratuitas",
     },
     {
-      image: '/assets/carrusel-acceso.jpg',
-      title: 'Acceso anticipado',
-      description: 'Sé el primero en obtener nuevos productos.',
+      image: acceso,
+      title: "Acceso anticipado",
     },
   ];
 
@@ -34,7 +33,26 @@ const Perfil = () => {
       </div>
       <div className="perfil-benefits">
         <h2>Beneficios</h2>
-        <Carousel items={benefits} />
+        <div className="benefits-grid">
+          {benefits.map((benefit, index) => (
+            <div key={index} className="benefit-item">
+              <img
+                src={benefit.image}
+                alt={benefit.title}
+                className="benefit-image"
+              />
+              <h3>{benefit.title}</h3>
+              <p>{benefit.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="favorites-section">
+        <h2>Favoritos</h2>
+        <a href="#">Ver todos</a>
+        <div className="favorites-grid">
+          {/* Aquí podrías mapear tus productos favoritos */}
+        </div>
       </div>
     </div>
   );

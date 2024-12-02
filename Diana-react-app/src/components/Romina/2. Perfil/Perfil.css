@@ -1,98 +1,62 @@
-
 .perfil-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .perfil-header {
-    text-align: left;
-    margin-bottom: 40px;
-  }
-  
-  .perfil-header h1 {
-    font-size: 32px;
-    font-weight: bold;
-  }
-  
-  .perfil-header p {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .perfil-benefits {
-    margin-top: 40px;
-  }
-  
-  .perfil-benefits h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #000;
-  }
-  
-  .perfil-benefits + .perfil-favorites {
-    margin-top: 40px;
-  }
-  
-  .perfil-favorites {
-    margin-top: 40px;
-  }
-  
-  .perfil-favorites h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .ver-todos {
-    font-size: 16px;
-    color: #0071f3;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  
-  .favorites-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .favorite-card {
-    width: 300px;
-    text-align: center;
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .favorite-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .favorite-info h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  .favorite-info p {
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .favorite-price {
-    font-size: 16px;
-    font-weight: bold;
-    color: #0071f3;
-    margin-top: 5px;
-  }
-  
+  margin: 0 auto;
+  width: 80%;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.perfil-header {
+  text-align: left; /* Alinea el contenido del encabezado a la izquierda */
+  margin-bottom: 30px;
+}
+
+.perfil-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.perfil-header p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.perfil-benefits {
+  text-align: left; /* Asegura que el subtítulo esté alineado a la izquierda */
+}
+
+.perfil-benefits h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+.perfil-benefits .benefits-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start; /* Alinea los elementos dentro de la fila */
+  flex-wrap: wrap;
+}
+
+.perfil-benefits .benefit-item {
+  flex: 1 1 calc(25% - 20px);
+  box-sizing: border-box;
+  text-align: center; /* Centra las imágenes y los textos individualmente */
+}
+
+.perfil-benefits .benefit-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.perfil-benefits .benefit-item h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+
+.perfil-benefits .benefit-item p {
+  font-size: 1rem;
+  color: #777;
+}

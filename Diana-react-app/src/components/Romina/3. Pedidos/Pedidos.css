@@ -1,20 +1,69 @@
 .pedidos-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: left;
-  }
-  
-  .pedidos-container h1 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .pedidos-container p {
-    font-size: 16px;
-    color: #555;
-    margin-top: 10px;
-  }
-  
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto; /* Añadido margen vertical */
+  padding: 20px;
+  text-align: left;
+  background-color: #f9f9f9; /* Fondo suave para destacar la sección */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */;
+  font-family: 'Arial', sans-serif;
+}
+
+.pedidos-container h1 {
+  font-size: 28px; /* Ajuste del tamaño */
+  font-weight: bold;
+  margin-bottom: 16px; /* Separación inferior */
+  color: #333; /* Color oscuro */
+  border-bottom: 2px solid #ddd; /* Línea de separación debajo del título */
+  padding-bottom: 8px; /* Espacio entre texto y línea */;
+  font-family: 'Arial', sans-serif;
+}
+
+.pedidos-container p {
+  font-size: 16px;
+  color: #666; /* Color gris más suave */
+  margin-top: 12px;
+  line-height: 1.6; /* Mejora la legibilidad */
+}
+
+.pedidos-container ul {
+  list-style: none; /* Quita puntos de la lista */
+  padding: 0;
+  margin: 20px 0; /* Espaciado vertical */;
+  font-family: 'Arial', sans-serif;
+}
+
+.pedidos-container ul li {
+  font-size: 16px;
+  color: #444; /* Un poco más oscuro que los párrafos */
+  padding: 10px 0; /* Espaciado entre elementos */
+  border-bottom: 1px solid #ddd; /* Línea divisoria */
+}
+
+.pedidos-container ul li:last-child {
+  border-bottom: none; /* Sin borde en el último elemento */
+}
+
+.pedidos-container button {
+  background-color: #007bff; /* Azul para los botones */
+  color: #fff; /* Texto blanco */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pedidos-container button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+.pedidos-container .empty-message {
+  text-align: center;
+  font-size: 18px;
+  color: #999; /* Color claro para mensajes de estado */
+  margin: 20px 0;
+}
