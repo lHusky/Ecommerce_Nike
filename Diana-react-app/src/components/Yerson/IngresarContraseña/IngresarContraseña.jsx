@@ -3,9 +3,9 @@ import Logo from '../../../assets/logo_nikes.png';
 import Jump from '../../../assets/JumpLogoNike.png';
 import Ver from '../../../assets/Ver.png';
 import './IngresarContraseña.css';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate} from 'react-router-dom'; 
 
-const IngresarContraseña = ({ email, password }) => {
+const IngresarContraseña = ({ email, password,RecuperarContraseña }) => {
   const [enteredPassword, setEnteredPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
@@ -41,8 +41,7 @@ const IngresarContraseña = ({ email, password }) => {
           <div>
             <form onSubmit={handleSubmit}>
               <div className="Correo">
-                <span className="Email">{email}</span> {/* Muestra el correo recibido */}
-                <a className="link" href="/iniciarSesion">Editar</a>
+                <span className="Email"> {email} </span> 
               </div>
               <div className="Contraseña">
                 <input
@@ -61,9 +60,13 @@ const IngresarContraseña = ({ email, password }) => {
                 </button>
               </div>
               {error && <div style={{ color: 'red' }}>{error}</div>} {/* Mostrar el error si ocurre */}
-              <div>
-                <a className="link" href="/iniciarSesion">¿Olvidaste tu contraseña?</a>
-              </div>
+              <button
+                  type="button"
+                  className="link"
+                  onClick={() => RecuperarContraseña(email)}
+                >
+                  ¿Olvidaste tu contraseña?
+                </button>
               <button type="submit" className="botonIniciarSesion">
                 Iniciar Sesión
               </button>
