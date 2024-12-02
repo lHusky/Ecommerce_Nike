@@ -5,3 +5,4 @@ GET http://localhost:4001/itemCarrito
 GET http://localhost:4001/itemCarrito/1
 
 ####
+GET http://localhost:4001/itemCarrito/carrito/1

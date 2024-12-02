@@ -2,8 +2,47 @@ import './Carrito.css'
 import foto1 from '../../../assets/foto1.png'
 import foto2 from '../../../assets/foto2.jpg'
 import foto3 from '../../../assets/foto3.png'
-
+import { useEffect, useState } from 'react';
 const Carrito = () => {
+  const [carrito, setCarrito] = useState(null);
+  const [itemscarrito, setitemsCarrito] = useState(null);
+  const [Producto, setProducto] = useState(null);
+  const usuarioGuardado = JSON.parse(localStorage.getItem('usuario'));
+
+  const obtenerCarrito = async () => {
+    await fetch(`http://localhost:4001/carritoCompra/user/${usuarioGuardado.id}`)
+        .then(response => response.json())
+        .then(data => setCarrito(data))
+        
+  }
+
+  const obtenerItemsCarrito = async () => {
+    await fetch(`http://localhost:4001/carritoCompra/user/${carrito.id}`)
+        .then(response => response.json())
+        .then(data => setitemsCarrito(data))
+        
+  }
+  const obtenerProducto = async (item) => {
+    await fetch(`http://localhost:4001/producto/${item.id_producto}`)
+        .then(response => response.json())
+        .then(data => {
+          const items = data.map(item => item);
+          setProducto(items);
+        });
+          
+  }
+  const obtenerDatos = async ()=>{
+    await itemscarrito.map((item, index) => obtenerProducto(item));
+  }
+  
+useEffect(() => {
+    
+     obtenerCarrito();
+     obtenerItemsCarrito();
+    obtenerDatos();
+    
+}, []);
+
     return (
       <div className="carrito-container">
         <div className="header">
@@ -13,7 +52,17 @@ const Carrito = () => {
   
         <div className="carrito-content">
           <h2>Carrito de compras</h2>
-          <p>Su carrito de compras está vacío</p>
+          {Producto?
+            <div>{Producto.map((item, index) => (
+              <div>
+                  <h5> {item.nombre}</h5>
+                  <h6>{item.categoria}</h6>
+                  <p>{item.precio}</p>
+                </div>
+                ))
+            
+                }</div>
+          :<p>Su carrito de compras está vacío</p>}
   
           <div className="favoritos">
             <p>Favoritos</p>

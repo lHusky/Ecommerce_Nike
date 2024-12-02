@@ -21,6 +21,11 @@ const findOne = (req,res) => {
     return res.status(200).json(result);
 }
 
+const findOneByCarrito = (req,res) => {
+    const id = req.params.id;
+    const result = repository.findOneByCarrito(id);
+    return res.status(200).json(result);
+}
 const update = (req, res) => {
     const itemcarrito = req.body;
     const result = repository.update(itemcarrito);
@@ -33,6 +38,6 @@ const remove = (req, res) => {
     return res.status(200).json(result);
 }
 
-const controller = { findAll, create, findOne, update, remove }
+const controller = { findAll, create, findOne,findOneByCarrito, update, remove }
 
 export default controller;

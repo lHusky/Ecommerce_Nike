@@ -15,6 +15,10 @@ const findOne = (id) => {
     const result = itemcarritos.find(x => x.id == id);
     return result;
 }
+const findOneByCarrito = (id) => {
+    const result = itemcarritos.filter(x => x.idCarrito == id);
+    return result;
+}
 
 const update = (itemcarrito) => {
     const index = itemcarritos.findIndex(item => item.id == itemcarrito.id);
@@ -36,5 +40,5 @@ const remove = (id) => {
         return false;
 } 
 
-const repository = { findAll, create, findOne, update, remove }
+const repository = { findAll, create, findOne,findOneByCarrito, update, remove }
 export default repository;
