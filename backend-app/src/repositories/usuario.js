@@ -47,6 +47,7 @@ const remove = (id) => {
         return false;
 } 
 
+
 const repository = { findAll, create, findOne,findOneEmail , update, remove }
 
 export default repository;

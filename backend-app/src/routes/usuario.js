@@ -9,6 +9,7 @@ router.get('/email/:Email', controller.findOneEmail);
 router.post('/', controller.create);
 router.put('/', controller.update);
 router.delete('/:id', controller.remove);
+router.put('/:id/updatePassword', controller.updatePassword);
 
 // Rutas de envío y verificación de código
 router.post('/send-code', controller.sendVerificationCode);

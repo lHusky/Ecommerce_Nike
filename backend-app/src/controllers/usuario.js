@@ -116,6 +116,36 @@ const verifyCode = (req, res) => {
 
     return res.status(400).json({ message: 'Código incorrecto' });
 };
+const updatePassword = async (req, res) => {
+    const { id } = req.params;
+    const { nuevaContraseña } = req.body;
+  
+    // Validar que la nueva contraseña sea válida
+    if (!nuevaContraseña || nuevaContraseña.length < 6) {
+      return res.status(400).json({ message: "La contraseña debe tener al menos 6 caracteres." });
+    }
+  
+    try {
+      // Buscar el usuario por ID
+      const usuario = await repository.findOne(id);
+      if (!usuario) {
+        return res.status(404).json({ message: "Usuario no encontrado" });
+      }
+  
+      // Actualizar la contraseña en la base de datos
+      usuario.contraseña = nuevaContraseña;
+      const actualizado = await repository.update(usuario);
+      
+      if (actualizado) {
+        return res.status(200).json({ message: "Contraseña actualizada correctamente" });
+      } else {
+        return res.status(500).json({ message: "Error al actualizar la contraseña" });
+      }
+    } catch (error) {
+      return res.status(500).json({ message: "Error al procesar la solicitud", error: error.message });
+    }
+  };
+  
 
 const controller = {
     findAll,
@@ -125,7 +155,8 @@ const controller = {
     remove,
     findOneEmail,
     sendVerificationCode,
-    verifyCode
+    verifyCode,
+    updatePassword
 };
 
 export default controller;
