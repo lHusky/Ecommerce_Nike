@@ -6,7 +6,7 @@
 }
 
 .perfil-header {
-  text-align: left; /* Alinea el contenido del encabezado a la izquierda */
+  text-align: left;
   margin-bottom: 30px;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .perfil-benefits {
-  text-align: left; /* Asegura que el subtítulo esté alineado a la izquierda */
+  text-align: left; 
 }
 
 .perfil-benefits h2 {
@@ -34,14 +34,14 @@
 .perfil-benefits .benefits-grid {
   display: flex;
   gap: 20px;
-  justify-content: flex-start; /* Alinea los elementos dentro de la fila */
+  justify-content: flex-start; 
   flex-wrap: wrap;
 }
 
 .perfil-benefits .benefit-item {
   flex: 1 1 calc(25% - 20px);
   box-sizing: border-box;
-  text-align: center; /* Centra las imágenes y los textos individualmente */
+  text-align: center; 
 }
 
 .perfil-benefits .benefit-item img {

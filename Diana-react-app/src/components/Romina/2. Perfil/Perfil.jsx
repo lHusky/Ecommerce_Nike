@@ -44,7 +44,7 @@ const Perfil = () => {
     <div className="perfil-container">
       <div className="perfil-header">
         <h1>{usuario.Nombre} {usuario.Apellido}</h1>
-        <p>Miembro de Nike desde Octubre 2024</p>
+        <p>Miembro de Nike desde 2024</p>
       </div>
       <div className="perfil-benefits">
         <h2>Beneficios</h2>

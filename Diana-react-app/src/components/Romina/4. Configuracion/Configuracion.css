@@ -89,23 +89,26 @@ input:focus {
   outline: none;
 }
 
-/* Botón Guardar */
+/* Estilo para el botón de Guardar */
 .guardar-boton {
-  display: inline-block;
   padding: 10px 20px;
   background-color: #007bff;
-  color: #fff;
+  color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: bold;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 .guardar-boton:hover {
   background-color: #0056b3;
 }
+
+/* Estilo cuando el botón ha sido presionado y los cambios han sido guardados */
+.guardar-boton.guardado {
+  background-color: #28a745; /* Color verde para indicar que se guardó */
+}
+
 
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {

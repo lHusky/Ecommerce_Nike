@@ -1,0 +1,4 @@
+npm install
+npm install nodemon
+
+npm run dev

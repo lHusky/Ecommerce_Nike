@@ -1,47 +1,100 @@
-import React, { useState } from "react";
-import "./DireccionesEntrega.css";
+import React, { useState } from 'react';
+import './Direcciones.css';
 
-const DireccionesEntrega = () => {
-  const [direcciones, setDirecciones] = useState([]);
+const Direcciones = () => {
+  const [direcciones, setDirecciones] = useState([
+    {
+      id: 1,
+      direccion: 'Av. Pardo 123, Lima',
+      departamento: 'Lima',
+      provincia: 'Lima',
+      distrito: 'Miraflores',
+    },
+  ]);
+
+  const [nuevaDireccion, setNuevaDireccion] = useState({
+    direccion: '',
+    departamento: '',
+    provincia: '',
+    distrito: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNuevaDireccion({ ...nuevaDireccion, [name]: value });
+  };
 
   const handleAgregarDireccion = () => {
-    // Aquí podrías abrir un modal o redirigir a un formulario de creación de dirección.
-    alert("Funcionalidad para agregar nueva dirección en desarrollo");
+    setDirecciones([
+      ...direcciones,
+      { id: direcciones.length + 1, ...nuevaDireccion },
+    ]);
+    setNuevaDireccion({ direccion: '', departamento: '', provincia: '', distrito: '' });
+  };
+
+  const handleEliminarDireccion = (id) => {
+    setDirecciones(direcciones.filter((direccion) => direccion.id !== id));
   };
 
   return (
-    <div className="direcciones-entrega">
-      <h2>Direcciones de entrega guardadas</h2>
-      {direcciones.length === 0 ? (
-        <div className="sin-direcciones">
-          <p>Actualmente no tienes ninguna dirección de envío guardada.</p>
-          <p>
-            Agrega una dirección aquí para que se complete automáticamente y
-            puedas finalizar la compra más rápido.
-          </p>
-          <button onClick={handleAgregarDireccion} className="boton-agregar">
-            Agregar nueva dirección
-          </button>
-        </div>
-      ) : (
-        <div className="lista-direcciones">
-          {direcciones.map((direccion, index) => (
-            <div key={index} className="direccion">
-              <p>
-                <strong>{direccion.nombre}</strong>
-              </p>
+    <div className="direcciones-container">
+      <h2>Direcciones de entrega</h2>
+
+      {/* Lista de direcciones guardadas */}
+      <div className="lista-direcciones">
+        {direcciones.map((direccion) => (
+          <div className="direccion-item" key={direccion.id}>
+            <div className="direccion-detalles">
               <p>{direccion.direccion}</p>
-              <p>{direccion.ciudad}, {direccion.codigoPostal}</p>
-              <p>{direccion.pais}</p>
+              <p>{direccion.departamento}, {direccion.provincia}, {direccion.distrito}</p>
             </div>
-          ))}
-          <button onClick={handleAgregarDireccion} className="boton-agregar">
-            Agregar nueva dirección
-          </button>
-        </div>
-      )}
+            <button
+              className="eliminar-boton"
+              onClick={() => handleEliminarDireccion(direccion.id)}
+            >
+              Eliminar
+            </button>
+          </div>
+        ))}
+      </div>
+
+      {/* Agregar nueva dirección */}
+      <div className="agregar-direccion">
+        <h3>Agregar nueva dirección</h3>
+        <input
+          type="text"
+          name="direccion"
+          value={nuevaDireccion.direccion}
+          onChange={handleChange}
+          placeholder="Dirección"
+        />
+        <input
+          type="text"
+          name="departamento"
+          value={nuevaDireccion.departamento}
+          onChange={handleChange}
+          placeholder="Departamento"
+        />
+        <input
+          type="text"
+          name="provincia"
+          value={nuevaDireccion.provincia}
+          onChange={handleChange}
+          placeholder="Provincia"
+        />
+        <input
+          type="text"
+          name="distrito"
+          value={nuevaDireccion.distrito}
+          onChange={handleChange}
+          placeholder="Distrito"
+        />
+        <button onClick={handleAgregarDireccion} className="guardar-direccion">
+          Guardar dirección
+        </button>
+      </div>
     </div>
   );
 };
 
-export default DireccionesEntrega;
+export default Direcciones;
