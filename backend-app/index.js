@@ -1,10 +1,11 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-
+import dotenv from 'dotenv';
 import productoRouter from './src/routes/producto.js';   
 import usuarioRouter from './src/routes/usuario.js';   
 
+dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());

@@ -15,51 +15,51 @@ const IniciarSesion = ({ NoExisteUser, UsuarioExiste }) => {
         Genero:'',
         FechaNacimiento:'',
     };
-    const [usuario, setUsuario] = useState(usuarioDefault); // Estado para almacenar usuario
     const [email, setEmail] = useState(''); // Estado para el correo electrónico
 
     // Función para obtener datos del usuario desde la API
-    const obtenerUsuario = async () => {
+    const obtenerUsuario = async (email) => {
         try {
             const response = await fetch(`http://localhost:4001/usuario/email/${email}`);
+    
+            if (!response.ok) {
+                console.error(`Error del servidor (${response.status}):`, response.statusText);
+                return null;
+            }
+    
             const data = await response.json();
-            console.log("Respuesta del servidor:", data);
-            if (data && data.Email) {
-                console.log("Llamando a UsuarioExiste...");
-                UsuarioExiste(email); // Solo esta función se debe ejecutar
+    
+            if (data.exists) {
+                console.log("Usuario encontrado:", data.user);
+                return data.user; // Retorna los datos del usuario si existe
             } else {
-                console.log("Llamando a NoExisteUser...");
-                NoExisteUser(email); // Solo esta función se debe ejecutar
+                console.log("Usuario no encontrado.");
+                return null; // Usuario no existe
             }
         } catch (error) {
-            console.error("Error en la petición:", error);
-            NoExisteUser(email);
+            console.error("Error al obtener el usuario:", error);
+            return null; // Maneja errores
         }
     };
     
+    
+    
+
     // Manejo del envío del formulario
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Correo ingresado:", email); // Depuración
     
-        try {
-            const response = await fetch(`http://localhost:4001/usuario/email/${email}`);
-            const data = await response.json();
-            console.log("Respuesta del servidor:", data);
+        const usuario = await obtenerUsuario(email); // Llama a obtenerUsuario
     
-            if (data && data.Email) {
-                console.log("Llamando a UsuarioExiste...");
-                UsuarioExiste(email); // Redirige correctamente
-            } else {
-                console.log("Llamando a NoExisteUser...");
-                NoExisteUser(email); // Redirige a registro
-            }
-        } catch (error) {
-            console.error("Error en la petición:", error);
-            NoExisteUser(email); // En caso de error, asume que no existe
+        if (usuario) {
+            console.log("Llamando a UsuarioExiste...");
+            UsuarioExiste(email); // Redirige si el usuario existe
+        } else {
+            console.log("Llamando a NoExisteUser...");
+            NoExisteUser(email); // Redirige al registro si no existe
         }
     };
-    
     
     return (
         <div class="parte1">
