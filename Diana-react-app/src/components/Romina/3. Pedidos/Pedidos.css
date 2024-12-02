@@ -1,0 +1,20 @@
+.pedidos-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .pedidos-container h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .pedidos-container p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+  }
+  

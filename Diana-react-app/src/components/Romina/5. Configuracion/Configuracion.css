@@ -1,0 +1,71 @@
+.configuracion {
+    display: flex;
+  }
+  
+  .menu-lateral {
+    width: 20%;
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  .menu-lateral ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-lateral li {
+    margin-bottom: 15px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .menu-lateral li:hover,
+  .menu-lateral li.activo {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .contenido-principal {
+    width: 80%;
+    padding: 20px;
+  }
+  
+  .contenido h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .formulario-detalles label {
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #444;
+  }
+  
+  .mensaje-guardado {
+    color: green;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
