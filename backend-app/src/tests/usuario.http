@@ -1,0 +1,49 @@
+GET http://localhost:4001/usuario
+
+####
+
+GET http://localhost:4001/usuario/1
+
+####
+
+GET http://localhost:4001/usuario/yersdani.2019@gmail.com
+
+####
+
+
+GET http://localhost:4001/usuario/email/yersdani.2019@gmail.com
+
+####
+POST http://localhost:4001/producto
+Content-Type: application/json
+
+{
+    "id": 99,
+    "nombre": "Nike V2K Run",
+    "categoria": "Zapatillas para mujer",
+    "precio": "S/ 599.90",
+    "tallas": ["5.5","6","6.5","7","7.5","8","8.5","9"],
+    "etiquetas": ["Mujer"],
+    "descripcion": "Adelanta. Regresa. No importa, este calzado lleva lo retro al futuro. El V2K remasteriza todo lo que amas del Vomero con un look traído directamente de un catálogo de running de principios de siglo. Equípate con una combinación de elementos metalizados llamativos, malla transpirable y una entresuela con una estética perfectamente vintage. La entresuela de espuma de doble densidad y el talón estilo chunky garantizan comodidad vayas donde vayas.",
+    "detalle":"",
+    "datos_producto":"",
+    "colorMuestra":"Blanco Cumbre/Blanco/Marrón Verdoso Claro/Cromo",
+    "estilo":"FN6703-100",
+    "imagenes":["",""]
+}
+
+###
+
+# PUT http://localhost:4001/producto
+# Content-Type: application/json
+
+# {
+#     "id": 4,
+#     "name": "Docente 4",
+#     "email": "docente4-actualizado@docente.com",
+#     "code": "204"
+# }
+
+####
+
+DELETE http://localhost:4001/docente/99

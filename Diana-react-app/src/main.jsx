@@ -9,6 +9,7 @@ import IniciarSesionPage from './routes/IniciarSesionPage.jsx'
 import RegistrarsePage from './routes/RegistrarsePage.jsx'
 import GuestCheckoutPage from './routes/guestCheckoutPage.jsx'
 import ProductoPage from './routes/ProductoPage.jsx'
+import IngresarContraseña from './components/Yerson/IngresarContraseña/IngresarContraseña.jsx'
 const router = createBrowserRouter([
   {
     path:"/",
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
     path:"/registro",
     element: <RegistrarsePage/> //TAREA DE YERSON 
   },
+  {
+    path:"/contraseña",
+    element: <IngresarContraseña/> //TAREA DE YERSON 
+  },
+
   {
     path: "/PaginaProducto/:id",  
     element: <ProductoPage/> 

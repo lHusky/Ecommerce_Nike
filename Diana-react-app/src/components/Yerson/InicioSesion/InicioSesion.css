@@ -93,11 +93,6 @@
     margin-bottom: 1.25rem;
 }
 
-.Correo{
-    margin-bottom: 16px;
-    display: flex;
-    flex-direction: column;
-}
 
 form .Correo label {
     margin-top: 10px;
@@ -106,25 +101,33 @@ form .Correo label {
     padding-left: 20px;
 }
 
+.Correo {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
 .Correo input {
     width: 100%;
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc; /* Borde gris claro por defecto */
+    border: 1px solid #ccc; /* Borde gris claro */
     border-radius: 8px; /* Bordes redondeados */
-    background-color: #f0f8ff; /* Color de fondo similar al de la imagen */
+    background-color: white; /* Fondo blanco */
     box-sizing: border-box;
-    transition: border-color 0.3s ease; /* Transición suave para el borde */
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Suave transición */
 }
 
 .Correo input:focus {
-    border: 1px solid black; /* Borde negro cuando el input está en foco */
-    outline: none; /* Quita el borde de enfoque del navegador */
+    border: 1px solid black; /* Borde negro cuando está en foco */
+    outline: none; /* Elimina el borde azul del navegador */
+    background-color: #f0f8ff; /* Fondo azul claro al enfocar */
 }
 
 .Correo input:hover {
-    border: 1px solid black; 
+    border: 1px solid black; /* Borde negro al pasar el cursor */
 }
+
 
 .Terminos{
     margin-top: 55px;

@@ -3,36 +3,43 @@ import './InicioSesion.css';
 import Logo from '../../../assets/logo_nikes.png';
 import Jump from '../../../assets/JumpLogoNike.png';
 
-const IniciarSesion = ({
-        NoExisteUser
-    }) => {
-    
+const IniciarSesion = ({ NoExisteUser, UsuarioExiste }) => {
     const usuarioDefault = {
-        id: 0,
-        nombre: '',
-        email: '',
-        contrasena: '',
-    // mas atributos
-    }
-    const [usuario, setUsuario] = useState(usuarioDefault);
-    const [email, setEmail] = useState(""); 
+        id:'',
+        Email:'',
+        Nombre:'',
+        Apellido:'',
+        password:'',
+        TipodeDocumento:'',
+        NumeroDocumento:'',
+        Genero:'',
+        FechaNacimiento:'',
+    };
+    const [usuario, setUsuario] = useState(usuarioDefault); // Estado para almacenar usuario
+    const [email, setEmail] = useState(''); // Estado para el correo electrónico
 
-    const obtenerUsuario = async () => {  
-        await fetch(`http://localhost:4001/usuario/${email}`) //falta hacer el back
-            .then(response => response.json())
-            .then(data => setUsuario(data))
-    }
-
-    const handleSubmit = async () =>
-    {
-       await obtenerUsuario();
-        if(usuario.email==""){
-            NoExisteUser();
-        }else{
-            //logica de la verificacion de contraseña 
+    // Función para obtener datos del usuario desde la API
+    const obtenerUsuario = async () => {
+        try {
+            const response = await fetch(`http://localhost:4001/usuario/email/${email}`);
+            const data = await response.json();
+            setUsuario(data);
+        } catch (error) {
+            console.error('Error al obtener el usuario:', error);
         }
-        
-    }
+    };
+
+    // Manejo del envío del formulario
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await obtenerUsuario();
+
+        if (!usuario || usuario.Email === '') {
+            NoExisteUser(); // Si no existe, ejecuta la función para redirigir a registro
+        } else {
+            UsuarioExiste(); // Si existe, redirige a la página correspondiente
+        }
+    };
   
     return (
         <div class="parte1">
@@ -49,7 +56,7 @@ const IniciarSesion = ({
                                 <span class="Pais">Perú</span>
                                 <label for="pais" class="Cambiar">Cambiar</label>
                                 <select class="menuPais" id="pais" name="menuPaises" required="" aria-required="true" autocomplete="pais">
-                                    <option id="af" value="Afganistán">Afganistán</option>
+                                    <option id="pe" value="Perú">Perú</option>
                                     <option id="al" value="Albania">Albania</option>
                                     <option id="dz" value="Argelia">Argelia</option>
                                     <option id="as" value="Samoa Americana">Samoa Americana</option>
@@ -213,7 +220,7 @@ const IniciarSesion = ({
                                     <option id="pa" value="Panamá">Panamá</option>
                                     <option id="pg" value="Papúa Nueva Guinea">Papúa Nueva Guinea</option>
                                     <option id="py" value="Paraguay">Paraguay</option>
-                                    <option id="pe" value="Perú">Perú</option>
+                                    <option id="af" value="Afganistán">Afganistán</option>
                                     <option id="ph" value="Filipinas">Filipinas</option>
                                     <option id="pn" value="Islas Pitcairn">Islas Pitcairn</option>
                                     <option id="pl" value="Polonia">Polonia</option>
@@ -288,13 +295,14 @@ const IniciarSesion = ({
                                     <option id="OTHER" value="Otro">Otro</option>
                                 </select>
                             </div>
-                            <div class="Correo">
-                                <label for="email" class="colorCorreo">* Correo Electrónico</label>
-                                <input type="email" 
-                                        id="email" 
-                                        placeholder="tuemail@ejemplo.com"
-                                        onChange={(e) => setEmail(e.target.value)} 
-                                        required/>
+                            <div className="Correo">
+                                <input 
+                                 type="email" 
+                                 id="email" 
+                                 placeholder="* Correo Electrónico" 
+                                 onChange={(e) => setEmail(e.target.value)} 
+                                 required 
+                                />
                             </div>
                             <div class="Terminos">
                                 <p class="textoTerminos">

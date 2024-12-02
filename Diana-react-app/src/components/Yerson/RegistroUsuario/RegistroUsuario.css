@@ -5,9 +5,8 @@
     height: 489px; 
     width: 100%; 
     display: flex;
-    justify-content: center ;
+    justify-content: center;
 }
-
 
 .parte2 {
     justify-content: center;
@@ -16,7 +15,6 @@
     height: 489px; 
     width: 100%;    
 }
-
 
 .parte3 {
     max-width: 364px;
@@ -27,181 +25,124 @@
     box-sizing: border-box;
 }
 
-
 .parte4 {
     display: flex;
     margin-top: 16px;
     margin-bottom: 16px;
     flex-wrap: wrap; 
     gap: 8px;
-    width: 388px 
-    
+    width: 388px; 
 }
 
-.imagen1 img{
+.imagen1 img {
     display: inline-block;
-    width: 43px; /* Ajusta el ancho según el tamaño de los logos en la imagen */
-    height: 16px; /* Ajusta el alto para mantener proporción */
-    overflow: hidden; /* Asegura que no haya desbordamiento de la imagen */
+    width: 43px;
+    height: 16px;
+    overflow: hidden;
     padding-top: 10px;
 }
 
 .imagen2 img {
     display: inline-block;
-    width: 36px; /* Ajusta el ancho según el tamaño de los logos en la imagen */
-    height: 33px; /* Ajusta el alto para mantener proporción */
-    overflow: hidden; /* Asegura que no haya desbordamiento de la imagen */
+    width: 36px;
+    height: 33px;
+    overflow: hidden;
 }
 
-.Correo{
+.Correo {
     display: flex;
     flex-direction: inherit;
     gap: 10px;
 }
 
-.Codigo, .Nombre, .Apellido {
+.Codigo, .Nombre, .Apellido, .Contraseña, 
+.TipoDocumento, .NumeroDocumento, 
+.PreferenciaCompra, .FechaNacimiento {
     position: relative;
-    border: 1px solid #ccc; /* Borde por defecto */
-    border-radius: 8px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 8px; /* Bordes curvos */
     padding: 10px;
     display: flex;
     align-items: center;
-    width: 100%; /* Ajusta al ancho del contenedor */
-    box-sizing: border-box; /* Incluye padding en el ancho */
-    transition: border-color 0.3s ease; /* Transición para el borde */
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
 /* Cambia el borde a negro cuando se pasa el cursor */
-.Codigo:hover, .Nombre:hover, .Apellido:hover {
+.Codigo:hover, .Nombre:hover, .Apellido:hover, .Contraseña:hover, 
+.TipoDocumento:hover, .NumeroDocumento:hover, 
+.PreferenciaCompra:hover, .FechaNacimiento:hover {
     border-color: black;
 }
 
 /* Contenedor de Nombre y Apellido */
 .NombreApellido {
-    display: flex; /* Alinea los campos en una fila horizontal */
-    gap: 10px; /* Espacio entre los campos */
-    width: 100%; /* Asegura que los campos ocupen el ancho disponible */
+    display: flex;
+    gap: 10px;
+    width: 100%;
     box-sizing: border-box;
 }
 
 /* Inputs */
-.Codigo input, .Nombre input, .Apellido input {
-    border: none; /* Sin bordes en el input */
-    outline: none; /* Sin borde de enfoque del navegador */
-    flex: 1; /* Toma todo el espacio disponible */
+.Codigo input, .Nombre input, .Apellido input, .Contraseña input, 
+.NumeroDocumento input, .FechaNacimiento input {
+    border: none;
+    outline: none;
+    flex: 1;
     font-size: 16px;
     padding: 0;
-    width: 100%; /* Ajusta el input al contenedor */
+    width: 100%;
     box-sizing: border-box;
 }
 
-/* Labels */
-.colorCodigo, .colorNombre, .colorApellido {
-    position: absolute;
-    top: 50%; /* Centra verticalmente */
-    left: 15px; /* Espaciado desde el borde izquierdo */
-    transform: translateY(-50%); /* Ajusta para un centrado perfecto */
-    background: white; /* Fondo blanco para que no se superponga */
-    color: gray; /* Color gris */
-    font-size: 16px; /* Tamaño normal */
-    padding: 0 5px; /* Espaciado */
-    transition: all 0.3s ease; /* Transición para animar los cambios */
-    pointer-events: none; /* Evita que el label interfiera */
+/* Selects */
+.TipoDocumento select, .PreferenciaCompra select {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    background-color: transparent;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Cuando el input está en foco */
+/* Personalización de placeholders */
+input::placeholder, select option[disabled] {
+    color: gray;
+    font-size: 16px;
+    opacity: 1;
+}
+
+input:focus::placeholder, select:focus option[disabled] {
+    color: lightgray;
+}
+
+/* Cuando el input está en foco o contiene texto */
 .Codigo input:focus ~ .colorCodigo,
 .Codigo input:not(:placeholder-shown) ~ .colorCodigo,
 .Nombre input:focus ~ .colorNombre,
 .Nombre input:not(:placeholder-shown) ~ .colorNombre,
 .Apellido input:focus ~ .colorApellido,
-.Apellido input:not(:placeholder-shown) ~ .colorApellido {
-    top: -10px; /* Mueve hacia arriba */
-    left: 10px; /* Ajusta su posición */
-    font-size: 12px; /* Tamaño más pequeño */
-    color: black; /* Cambia el color a negro */
+.Apellido input:not(:placeholder-shown) ~ .colorApellido,
+.Contraseña input:focus ~ .colorContraseña,
+.Contraseña input:not(:placeholder-shown) ~ .colorContraseña,
+.TipoDocumento select:focus,
+.TipoDocumento select:not(:placeholder-shown),
+.NumeroDocumento input:focus,
+.NumeroDocumento input:not(:placeholder-shown),
+.PreferenciaCompra select:focus,
+.PreferenciaCompra select:not(:placeholder-shown),
+.FechaNacimiento input:focus,
+.FechaNacimiento input:not(:placeholder-shown) {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: black;
 }
 
 /* Botón Reenviar Código */
-.Codigo .ReenviarCodigo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none; /* Sin fondo */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cambia el cursor a mano */
-    padding: 0; /* Sin padding */
-    margin: 0; /* Sin margen */
-}
-
-.Codigo .ReenviarCodigo img {
-    width: 20px; /* Ancho del ícono */
-    height: 20px; /* Alto del ícono */
-}
-
-/* Mensaje de reenvío */
-.Codigo .resend-msg {
-    display: none; /* Oculto por defecto */
-    font-size: 12px; /* Tamaño de la fuente */
-    color: gray; /* Color del texto */
-    margin-left: 10px; /* Espacio hacia la derecha */
-}
-
-/* Contenedor de la contraseña */
-.Contraseña {
-    position: relative;
-    border: 1px solid #ccc; /* Borde por defecto */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box; /* Asegura que padding se incluye en el ancho */
-    transition: border-color 0.3s ease;
-    margin-bottom: 0; /* Sin margen inferior */
-}
-
-/* Cambia el borde a negro cuando se pasa el cursor */
-.Contraseña:hover {
-    border-color: black;
-}
-
-/* Estilo del input */
-.inputContraseña {
-    border: none; /* Sin borde adicional */
-    outline: none; /* Sin borde de enfoque */
-    flex: 1; /* Toma el espacio restante */
-    font-size: 16px;
-    padding: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Estilo del label por defecto */
-.colorContraseña {
-    position: absolute;
-    top: 50%; /* Centra verticalmente */
-    left: 15px; /* Espaciado desde el borde izquierdo */
-    transform: translateY(-50%); /* Ajusta para un centrado perfecto */
-    background: white; /* Fondo blanco para que no se superponga */
-    color: gray; /* Color gris */
-    font-size: 16px; /* Tamaño normal */
-    padding: 0 5px; /* Espaciado */
-    transition: all 0.3s ease; /* Transición para animar los cambios */
-    pointer-events: none; /* Evita que el label interfiera */
-}
-
-/* Mueve el label hacia arriba cuando el input está enfocado o contiene texto */
-.inputContraseña:focus ~ .colorContraseña,
-.inputContraseña:not(:placeholder-shown) ~ .colorContraseña {
-    top: -10px; /* Mueve hacia arriba */
-    left: 10px; /* Ajusta su posición */
-    font-size: 12px; /* Tamaño más pequeño */
-    color: black; /* Cambia el color a negro */
-}
-
-/* Botón para ver la contraseña */
-.verContraseña {
+.Codigo .ReenviarCodigo, .Contraseña .verContraseña {
     background: none;
     border: none;
     cursor: pointer;
@@ -212,33 +153,79 @@
     justify-content: center;
 }
 
-.verContraseña img {
+.Codigo .ReenviarCodigo img, .Contraseña .verContraseña img {
     width: 20px;
     height: 20px;
 }
 
+/* Mensaje de reenvío */
+.Codigo .resend-msg {
+    display: none;
+    font-size: 12px;
+    color: gray;
+    margin-left: 10px;
+}
+
 /* Contenedor de las condiciones */
 .condiciones {
-    margin-top: 10px; /* Espaciado entre el campo de contraseña y las condiciones */
+    margin-top: 10px;
     display: flex;
-    flex-direction: column; /* Asegura que las condiciones estén apiladas verticalmente */
-    gap: 5px; /* Espaciado entre las líneas */
+    flex-direction: column;
+    gap: 5px;
 }
 
 /* Estilo de las condiciones */
 .condicion {
-    font-size: 14px; /* Tamaño del texto */
-    color: gray; /* Texto en gris */
-    display: flex; /* Para alinear el icono con el texto */
-    align-items: center; /* Centra el texto verticalmente */
+    font-size: 14px;
+    color: gray;
+    display: flex;
+    align-items: center;
 }
 
 /* Espaciado entre el icono y el texto */
 .condicion span {
-    margin-left: 5px; /* Espaciado a la derecha del icono */
+    margin-left: 5px;
 }
 
 /* Condiciones cumplidas */
 .condicion.cumplida {
-    color: green; /* Cambia a verde cuando se cumple */
+    color: green;
 }
+
+/* Campos adicionales con márgenes */
+.TipoDocumento, .NumeroDocumento, 
+.PreferenciaCompra, .FechaNacimiento {
+    margin-top: 8px;
+}
+
+/* Ícono de calendario en Fecha de Nacimiento */
+.FechaNacimiento input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+.textoCentrado {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: -30px;
+  }
+  
+  .checkboxContainer {
+    margin-top: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .checkboxContainer input {
+    margin-top: 2px;
+  }
