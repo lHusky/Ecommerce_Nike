@@ -13,10 +13,11 @@ const DesplegablePerfil = () => {
     return (
         <ul className="menu_desplegable">
             <li><Link to={`/PerfilPage/:id}`}>Perfil</Link></li>
-            <li><a href="#">Experiencias</a></li>
-            <li><a href="#">Mis órdenes</a></li>
-            <li><a href="#">Favoritos</a></li>
-            <li><a href="#">Configuración de cuenta</a></li>
+            
+            <li><Link to="/PedidosPage">Mis órdenes</Link></li>
+            
+            <li><Link to="/ConfiguracionPage">Configuración de cuenta</Link></li>
+            
             <li><a href="/" onClick={cerrarSesion}>Cerrar sesión</a></li>
         </ul>
     )

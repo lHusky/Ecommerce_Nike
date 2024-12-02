@@ -6,9 +6,9 @@ const Navegacion = () => {
   return (
     <nav className="nav-container">
       <ul>
-        <li><Link to="/perfil">Perfil</Link></li>
-        <li><Link to="/pedidos">Pedidos</Link></li>
-        <li><Link to="/configuracion">Configuración</Link></li>
+        <li><Link to={`/PerfilPage/:id}`}>Perfil</Link></li>
+        <li><Link to="/PedidosPage">Pedidos</Link></li>
+        <li><Link to="/ConfiguracionPage">Configuración</Link></li>
       </ul>
     </nav>
   );

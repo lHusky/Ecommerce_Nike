@@ -1,31 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import './Configuracion.css';
 import Preferencias from './Preferencias';  // Importa el componente Preferencias
+import { useParams } from 'react-router-dom';  // Usamos useParams para obtener el id desde la URL
 
 const Configuracion = () => {
-  const [usuario, setUsuario] = useState(null);
-  const [isSaved, setIsSaved] = useState(false); // Estado para manejar el cambio de color en el botón
-  const [activeSection, setActiveSection] = useState('detalles'); // Controlar la sección activa
+  const { id } = useParams();  // Obtener el id de la URL
+  const [usuario, setUsuario] = useState(null);  // Estado para almacenar los datos del usuario
+  const [isSaved, setIsSaved] = useState(false);  // Estado para manejar el cambio de color en el botón
+  const [activeSection, setActiveSection] = useState('detalles');  // Controlar la sección activa
 
-  // Cargar los datos del usuario desde el backend al montar el componente
+  // Al cargar el componente, obtenemos el usuario desde localStorage
   useEffect(() => {
-    const fetchUsuario = async () => {
-      try {
-        const response = await fetch('/api/usuario/1');  // Asegúrate de que la URL sea correcta
-        if (!response.ok) {
-          throw new Error('No se pudo obtener el usuario');
-        }
-        const data = await response.json();
-        setUsuario(data);
-      } catch (error) {
-        console.error('Error al obtener los datos del usuario:', error);
-      }
-    };
-
-    fetchUsuario();
+    const usuarioData = localStorage.getItem('usuario');
+    if (usuarioData) {
+      setUsuario(JSON.parse(usuarioData));  // Convertimos el JSON a un objeto y lo almacenamos en el estado
+    }
   }, []);
 
-  // Si el usuario no está cargado, muestra el mensaje de carga
+  // Si el usuario no está cargado, mostramos el mensaje de "Cargando..."
   if (!usuario) {
     return <div>Cargando...</div>;
   }
@@ -39,7 +31,7 @@ const Configuracion = () => {
   // Función para guardar los cambios (actualiza el backend)
   const handleGuardar = async () => {
     try {
-      const response = await fetch('/api/usuario/update', {
+      const response = await fetch(`/api/usuario/update/${id}`, {  // Usamos el id para actualizar los datos
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -65,11 +57,8 @@ const Configuracion = () => {
 
   // Función para guardar las preferencias
   const handleSavePreferences = (preferencias) => {
-    // Actualizar las preferencias del usuario y enviarlas al backend
     const updatedUsuario = { ...usuario, ...preferencias };
-    setUsuario(updatedUsuario); // Actualiza el estado con las nuevas preferencias
-
-    // También puedes hacer una solicitud PUT aquí para guardar las preferencias en el backend
+    setUsuario(updatedUsuario);  // Actualiza el estado con las nuevas preferencias
     alert('Preferencias guardadas');
   };
 
