@@ -1,10 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import './InicioSesion.css';
 import Logo from '../../../assets/logo_nikes.png';
 import Jump from '../../../assets/JumpLogoNike.png';
 
-const IniciarSesion = () => {
-  return (
+const IniciarSesion = ({
+        NoExisteUser
+    }) => {
+    
+    const usuarioDefault = {
+        id: 0,
+        nombre: '',
+        email: '',
+        contrasena: '',
+    // mas atributos
+    }
+    const [usuario, setUsuario] = useState(usuarioDefault);
+    const [email, setEmail] = useState(""); 
+
+    const obtenerUsuario = async () => {  
+        await fetch(`http://localhost:4001/usuario/${email}`) //falta hacer el back
+            .then(response => response.json())
+            .then(data => setUsuario(data))
+    }
+
+    const handleSubmit = async () =>
+    {
+       await obtenerUsuario();
+        if(usuario.email==""){
+            NoExisteUser();
+        }else{
+            //logica de la verificacion de contraseña 
+        }
+        
+    }
+  
+    return (
         <div class="parte1">
             <div class="parte2">
                 <div class="parte3">
@@ -14,7 +44,7 @@ const IniciarSesion = () => {
                     </div>
                     <span class="Titulo">Ingresa tu correo electrónico para unirte o iniciar sesión.</span>
                     <div>
-                        <form action="">
+                        <form onSubmit={handleSubmit}>
                             <div class="PaisCambio">
                                 <span class="Pais">Perú</span>
                                 <label for="pais" class="Cambiar">Cambiar</label>
@@ -260,7 +290,11 @@ const IniciarSesion = () => {
                             </div>
                             <div class="Correo">
                                 <label for="email" class="colorCorreo">* Correo Electrónico</label>
-                                <input type="email" id="email" placeholder="tuemail@ejemplo.com" required/>
+                                <input type="email" 
+                                        id="email" 
+                                        placeholder="tuemail@ejemplo.com"
+                                        onChange={(e) => setEmail(e.target.value)} 
+                                        required/>
                             </div>
                             <div class="Terminos">
                                 <p class="textoTerminos">
