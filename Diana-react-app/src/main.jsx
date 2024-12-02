@@ -11,7 +11,7 @@ import GuestCheckoutPage from './routes/guestCheckoutPage.jsx'
 import ProductoPage from './routes/ProductoPage.jsx'
 import IngresarContraseña from './components/Yerson/IngresarContraseña/IngresarContraseña.jsx'
 import GraciasPage from './routes/GraciasPage.jsx'
-
+import UsuarioCheckoutPage from './routes/UsuarioCheckoutPage.jsx'
 const router = createBrowserRouter([
   {
     path:"/",
@@ -28,6 +28,10 @@ const router = createBrowserRouter([
   {
     path:"/guest-checkout",
     element: <GuestCheckoutPage/> //TAREA DE ANDRE 
+  },
+  {
+    path:"/usuariocheckout",
+    element: <UsuarioCheckoutPage/> //TAREA DE ANDRE 
   },
   {
     path:"/gracias",
