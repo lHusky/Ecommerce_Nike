@@ -4,6 +4,7 @@ import Configuracion from "../components/Romina/4. Configuracion/Configuracion.j
 import Header from '../components/Diana/Header/Header.jsx';
 import Navegador from '../components/Diana/Navegador/Navegador.jsx';
 import Direcciones from '../components/Romina/4. Configuracion/DireccionesEntrega.jsx';
+import Pie from'../components/Romina/Footer/PiePagina.jsx'
 
 const ConfiguracionPedidosPage = () => {
     return (
@@ -13,6 +14,7 @@ const ConfiguracionPedidosPage = () => {
             <Navegacion />
             <Configuracion />
             <Direcciones />
+            <Pie />
 
         </div>
     );

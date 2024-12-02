@@ -1,0 +1,124 @@
+.piepagina-container {
+    background-color: #000;  /* Fondo negro */
+    padding: 40px 0;  /* Ajuste del padding para aumentar la altura */
+    color: #fff;  /* Texto blanco */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    font-size: 16px;  /* Aumentamos el tamaño de la fuente */
+    margin-top: 50px;  /* Agregado margen superior para separar del contenido anterior */
+}
+
+.piepagina-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.piepagina-logo img {
+    width: 140px;
+    height: auto;
+}
+
+.piepagina-enlaces ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.piepagina-enlaces li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.piepagina-enlaces a {
+    text-decoration: none;
+    color: #fff;  /* Enlaces blancos */
+    font-size: 14px;
+}
+
+.piepagina-enlaces a:hover {
+    color: #007bff;  /* Color azul para el hover */
+}
+
+.piepagina-siguenos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.piepagina-siguenos span {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;  /* Texto en blanco */
+}
+
+.redes-sociales a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: #fff;  /* Enlaces de redes sociales blancos */
+}
+
+.redes-sociales a:hover {
+    color: #007bff;  /* Cambiar color al pasar el ratón */
+}
+
+.facebook:hover {
+    color: #3b5998;
+}
+
+.twitter:hover {
+    color: #1da1f2;
+}
+
+.instagram:hover {
+    color: #e1306c;
+}
+
+/* Ajustes adicionales para los enlaces y la separación entre secciones */
+.piepagina-enlaces {
+    text-align: left;
+}
+
+.piepagina-siguenos {
+    text-align: right;
+}
+
+.piepagina-enlaces a {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Modificaciones para mayor separación y tamaño */
+.piepagina-container {
+    padding: 50px 0;  /* Más alto */
+    margin-top: 50px; /* Ajustado margen superior */
+}
+
+.piepagina-enlaces li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.piepagina-logo img {
+    width: 150px;
+}
+
+.piepagina-siguenos {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.redes-sociales a {
+    margin: 0 15px;
+    font-size: 18px;
+}
