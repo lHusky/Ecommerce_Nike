@@ -23,24 +23,44 @@ const IniciarSesion = ({ NoExisteUser, UsuarioExiste }) => {
         try {
             const response = await fetch(`http://localhost:4001/usuario/email/${email}`);
             const data = await response.json();
-            setUsuario(data);
+            console.log("Respuesta del servidor:", data);
+            if (data && data.Email) {
+                console.log("Llamando a UsuarioExiste...");
+                UsuarioExiste(email); // Solo esta función se debe ejecutar
+            } else {
+                console.log("Llamando a NoExisteUser...");
+                NoExisteUser(email); // Solo esta función se debe ejecutar
+            }
         } catch (error) {
-            console.error('Error al obtener el usuario:', error);
+            console.error("Error en la petición:", error);
+            NoExisteUser(email);
         }
     };
-
+    
     // Manejo del envío del formulario
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await obtenerUsuario();
-
-        if (!usuario || usuario.Email === '') {
-            NoExisteUser(); // Si no existe, ejecuta la función para redirigir a registro
-        } else {
-            UsuarioExiste(); // Si existe, redirige a la página correspondiente
+        console.log("Correo ingresado:", email); // Depuración
+    
+        try {
+            const response = await fetch(`http://localhost:4001/usuario/email/${email}`);
+            const data = await response.json();
+            console.log("Respuesta del servidor:", data);
+    
+            if (data && data.Email) {
+                console.log("Llamando a UsuarioExiste...");
+                UsuarioExiste(email); // Redirige correctamente
+            } else {
+                console.log("Llamando a NoExisteUser...");
+                NoExisteUser(email); // Redirige a registro
+            }
+        } catch (error) {
+            console.error("Error en la petición:", error);
+            NoExisteUser(email); // En caso de error, asume que no existe
         }
     };
-  
+    
+    
     return (
         <div class="parte1">
             <div class="parte2">

@@ -5,34 +5,30 @@ import RegistroUsuario from "../components/Yerson/RegistroUsuario/RegistroUsuari
 import IngresarContraseña from "../components/Yerson/IngresarContraseña/IngresarContraseña.jsx";
 
 const IniciarSesionPage = () => {
-    const[email,setEmail]=useState('');
-    const [verRegistro, setVerRegistro] = useState(false); // Estado para mostrar registro
-    const [verContraseña, setVerContraseña] = useState(false); // Estado para mostrar la página de contraseña
-    const navigate = useNavigate(); // Hook para manejar redirecciones
+    const [email, setEmail] = useState('');
+    const [verRegistro, setVerRegistro] = useState(false); 
+    const [verContraseña, setVerContraseña] = useState(false);
 
-    // Si el usuario no existe, cambia al formulario de registro
-    const handleNoExisteUsuario = (Email) => {
-        setEmail(Email)
-        setVerRegistro(true);
+    const handleNoExisteUsuario = (emailInput) => {
+        console.log("Redirigiendo a RegistroUsuario con email:", emailInput); // Depuración
+        setVerContraseña(false); // Asegura que no haya conflicto
+        setVerRegistro(true); // Activa el estado para RegistroUsuario
+        setEmail(emailInput); // Actualiza el correo
     };
 
-    // Si el usuario existe, cambia a la página de contraseña
-    const handleUsuarioExiste = (Email) => {
-        setEmail(Email)
-        setVerContraseña(true);
-    };
-
-    // Redirige al dashboard después de iniciar sesión
-    const handleInicioSesionCompleto = () => {
-        navigate('/');
+    const handleUsuarioExiste = (emailInput) => {
+        console.log("Redirigiendo a IngresarContraseña con email:", emailInput); // Depuración
+        setVerRegistro(false); // Asegura que no haya conflicto
+        setVerContraseña(true); // Activa el estado para IngresarContraseña
+        setEmail(emailInput); // Actualiza el correo
     };
 
     return (
         <div>
             {verRegistro ? (
-                <RegistroUsuario />
+                <RegistroUsuario email={email} />
             ) : verContraseña ? (
-                <IngresarContraseña onLoginComplete={handleInicioSesionCompleto} />
+                <IngresarContraseña email={email} />
             ) : (
                 <IniciarSesion
                     NoExisteUser={handleNoExisteUsuario}
@@ -43,5 +39,5 @@ const IniciarSesionPage = () => {
     );
 };
 
-export default IniciarSesionPage;
 
+export default IniciarSesionPage;

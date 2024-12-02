@@ -4,7 +4,8 @@ import Jump from '../../../assets/JumpLogoNike.png';
 import Ver from '../../../assets/Ver.png';
 import './IngresarContraseña.css';
 
-const IngresarContraseña = () => {
+const IngresarContraseña = ({ email }) => {
+    console.log("Email recibido en IngresarContraseña:", email); // Depuración
 
   return (
     <div className="parte1">
@@ -22,7 +23,7 @@ const IngresarContraseña = () => {
           <div>
             <form >
               <div className="Correo">
-                <span className="Email">yersdani.2019@gmail.com</span>
+                <span className="Email">{email}</span> {/* Muestra el correo recibido */}
                 <a className="link" href="/iniciarSesion">Editar</a>
               </div>
               <div className="Contraseña">

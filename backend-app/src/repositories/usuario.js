@@ -19,10 +19,11 @@ const findOne = (id) => {
 }
 
 const findOneEmail = (Email) => {
-    const result = productos.find(x => x.Email == Email);
-
+    const result = productos.find(x => x.Email.toLowerCase() === Email.toLowerCase());
     return result;
-}
+};
+
+
 
 const update = (producto) => {
     const index = productos.findIndex(item => item.id == producto.id);

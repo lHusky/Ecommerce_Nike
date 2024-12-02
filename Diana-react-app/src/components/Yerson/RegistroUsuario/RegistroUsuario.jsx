@@ -1,23 +1,114 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from '../../../assets/logo_nikes.png';
 import Jump from '../../../assets/JumpLogoNike.png';
 import Reenviar from '../../../assets/Reenviar.png';
 import Ver from '../../../assets/Ver.png';
 import './RegistroUsuario.css';
 
-const RegistroUsuario = () => {
+const RegistroUsuario = ({ email }) => {
+  const [acceptTerms, setAcceptTerms] = useState(false);
 
-    const [acceptTerms, setAcceptTerms] = useState(false);  
+  // Enviar código automáticamente al cargar la página
+  useEffect(() => {
+    const sendCode = async () => {
+      try {
+        const response = await fetch("http://localhost:4001/usuario/send-code", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        });
 
-    const handleFormSubmit = (e) => {
-        if (!acceptTerms) {
-          e.preventDefault();
-          alert('Debes aceptar los términos y condiciones para continuar.');
-          }
-        };
+        if (response.ok) {
+          console.log("Código enviado automáticamente al correo:", email);
+        } else {
+          console.error("Error al enviar el código automáticamente.");
+        }
+      } catch (error) {
+        console.error("Error en la solicitud automática de envío de código:", error);
+      }
+    };
 
-    
+    sendCode();
+  }, [email]);
 
+  // Reenviar código al hacer clic en el botón
+  const handleResendCode = async () => {
+    try {
+      const response = await fetch("http://localhost:4001/usuario/send-code", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        alert("Código reenviado al correo.");
+      } else {
+        alert("Error al reenviar código.");
+      }
+    } catch (error) {
+      console.error("Error reenviando código:", error);
+    }
+  };
+
+  // Manejo del formulario de registro
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    if (!acceptTerms) {
+      alert('Debes aceptar los términos y condiciones para continuar.');
+      return;
+    }
+
+    const code = document.querySelector(".Codigo input").value;
+
+    try {
+      // Verificar el código
+      const verifyResponse = await fetch("http://localhost:4001/usuario/verify-code", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, code }),
+      });
+
+      if (!verifyResponse.ok) {
+        alert("Código incorrecto o expirado.");
+        return; // Detener si el código no es válido
+      }
+
+      // Si el código es válido, continuar con el registro
+      const usuario = {
+        Email: email,
+        Nombre: document.querySelector(".Nombre input").value,
+        Apellido: document.querySelector(".Apellido input").value,
+        password: document.querySelector(".Contraseña input").value,
+        TipodeDocumento: document.querySelector(".TipoDocumento select").value,
+        NumeroDocumento: document.querySelector(".NumeroDocumento input").value,
+        Genero: document.querySelector(".PreferenciaCompra select").value,
+        FechaNacimiento: document.querySelector(".FechaNacimiento input").value,
+      };
+
+      const registerResponse = await fetch("http://localhost:4001/usuario", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(usuario),
+      });
+
+      if (registerResponse.ok) {
+        alert("Usuario registrado con éxito");
+      } else {
+        alert("Error al registrar usuario");
+      }
+    } catch (error) {
+      console.error("Error durante el proceso:", error);
+      alert("Hubo un error durante el registro.");
+    }
+  };
 
   return (
     <div className="parte1">
@@ -38,15 +129,15 @@ const RegistroUsuario = () => {
                 <span className="mensag-codigo">Te enviamos un código a</span>
               </div>
               <div className="Correo">
-                <span className="Email">yersdani.2019@gmail.com</span>
+                <span className="Email">{email}</span>
                 <a className="link" href="/iniciarSesion">Editar</a>
               </div>
               <div className="Codigo">
                 <input type="text" placeholder="* Código" required />
-                <button className="ReenviarCodigo">
+                <button type="button" onClick={handleResendCode} className="ReenviarCodigo">
                   <img src={Reenviar} alt="Logo Reenviar" />
                 </button>
-                <div className="resend-msg"> Reenviar código en <span id="contador">30</span> s</div>
+                <div className="resend-msg">Reenviar código en <span id="contador">30</span> s</div>
               </div>
               <div className="NombreApellido">
                 <div className="Nombre">
@@ -71,8 +162,8 @@ const RegistroUsuario = () => {
                 </div>
               </div>
               <div className="TipoDocumento">
-                <select required>
-                  <option value="" disabled selected>* Tipo de documento</option>
+                <select required defaultValue="">
+                  <option value="" disabled>* Tipo de documento</option>
                   <option value="dni">DNI</option>
                   <option value="passport">Pasaporte</option>
                   <option value="other">Otro</option>
@@ -82,8 +173,8 @@ const RegistroUsuario = () => {
                 <input type="text" placeholder="* Número de Documento" required />
               </div>
               <div className="PreferenciaCompra">
-                <select required>
-                  <option value="" disabled selected>* Preferencia de compra</option>
+                <select required defaultValue="">
+                  <option value="" disabled>* Preferencia de compra</option>
                   <option value="hombre">Hombre</option>
                   <option value="mujer">Mujer</option>
                   <option value="unisex">Unisex</option>
