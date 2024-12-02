@@ -13,6 +13,8 @@ import IngresarContraseña from './components/Yerson/IngresarContraseña/Ingresa
 import GraciasPage from './routes/GraciasPage.jsx'
 import UsuarioCheckoutPage from './routes/UsuarioCheckoutPage.jsx'
 import PerfilPage from './routes/PerfilPage.jsx'
+import PedidosPage from './routes/PedidosPage.jsx'
+import ConfiguracionPage from './routes/ConfiguracionPage.jsx'
 import RecuperarContraseña from './components/Yerson/RecuperarContraseña/RecuperarContraseña.jsx'
 const router = createBrowserRouter([
   {
@@ -65,6 +67,14 @@ const router = createBrowserRouter([
   {
     path: "/recuperarContraseña/:email", 
     element: <RecuperarContraseña /> 
+  },
+  {
+    path:"/PedidosPage",
+    element: <PedidosPage/>
+  },
+  {
+    path:"/ConfiguracionPage",
+    element: <ConfiguracionPage/>
   },
 
 ])
