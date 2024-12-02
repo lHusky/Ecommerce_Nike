@@ -15,7 +15,7 @@ const IngresarContraseña = ({ email, password }) => {
     e.preventDefault();
     if (enteredPassword.trim() === password) {
       alert('Contraseña correcta, bienvenido!');
-      navigate(`/PerfilPage/${email}`);  
+      navigate(`/`);  
     } else {
       setError('Contraseña incorrecta');
     }

@@ -43,7 +43,6 @@ const Perfil = () => {
   return (
     <div className="perfil-container">
       <div className="perfil-header">
-        {/* Mostramos el nombre y apellido del usuario */}
         <h1>{usuario.Nombre} {usuario.Apellido}</h1>
         <p>Miembro de Nike desde Octubre 2024</p>
       </div>

@@ -1,18 +1,18 @@
-const itemcarritos = 
+let itemcarritos = 
 [
-    {id:'',
-     idCarrito:'',
-     idProducto:''
+    {id:'1',
+     idCarrito:'1',
+     idProducto:'1'
     },
 
-    {id:'',
-        idCarrito:'',
-        idProducto:''
+    {id:'2',
+        idCarrito:'1',
+        idProducto:'2'
     },
 
-    {id:'',
-        idCarrito:'',
-        idProducto:''
+    {id:'3',
+        idCarrito:'2',
+        idProducto:'4'
     },
 ]
 

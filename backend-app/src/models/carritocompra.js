@@ -1,14 +1,14 @@
-const itemcarritos = 
+let carritoCompra = 
 [
-    {id:'',
-     idUsuario:''
+    {id:'1',
+     idUsuario:'1'
     },
-    {id:'',
-     idUsuario:''
+    {id:'2',
+     idUsuario:'2'
     },
     {id:'',
      idUsuario:''
     },
 ]
 
-export default itemcarritos;
+export default carritoCompra;

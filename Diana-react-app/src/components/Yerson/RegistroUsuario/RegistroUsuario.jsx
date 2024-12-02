@@ -101,7 +101,7 @@ const RegistroUsuario = ({ email }) => {
                 localStorage.setItem('usuario', JSON.stringify(responseData));
             
                   alert("Usuario registrado con éxito.");
-                  navigate("/PerfilPage");
+                  navigate("/");
               } else {
                   alert("Error al obtener datos del usuario.");
                   console.log("Estructura incorrecta de la respuesta:", responseData); // Para investigar qué contiene la respuesta
