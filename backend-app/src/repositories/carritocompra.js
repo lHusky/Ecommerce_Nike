@@ -16,6 +16,11 @@ const findOne = (id) => {
     return result;
 }
 
+const findOneByUser = (id) => {
+    const result = carritocompras.find(x => x.idUsuario == id);
+    return result;
+}
+
 const update = (carritocompra) => {
     const index = carritocompras.findIndex(item => item.id == carritocompra.id);
     if (index > -1) {
@@ -36,5 +41,5 @@ const remove = (id) => {
         return false;
 } 
 
-const repository = { findAll, create, findOne, update, remove }
+const repository = { findAll, create, findOne,findOneByUser, update, remove }
 export default repository;

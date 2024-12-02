@@ -1,0 +1,7 @@
+GET http://localhost:4001/carritoCompra
+
+####
+
+GET http://localhost:4001/carritoCompra/1
+
+####

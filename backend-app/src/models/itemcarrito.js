@@ -1,18 +1,18 @@
 let itemcarritos = 
 [
-    {id:'1',
-     idCarrito:'1',
-     idProducto:'1'
+    {id:1,
+     idCarrito:1,
+     idStock:1
     },
 
-    {id:'2',
-        idCarrito:'1',
-        idProducto:'2'
+    {id:2,
+        idCarrito:1,
+        idStock:2
     },
 
-    {id:'3',
-        idCarrito:'2',
-        idProducto:'4'
+    {id:3,
+        idCarrito:2,
+        idStock:4
     },
 ]
 

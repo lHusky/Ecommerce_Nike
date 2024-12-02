@@ -1,0 +1,14 @@
+GET http://localhost:4001/stockProductos
+
+####
+
+GET http://localhost:4001/stockProductos/1
+
+####
+
+GET http://localhost:4001/stockProductos/producto/1
+
+####
+
+
+GET http://localhost:4001/stockProductos/producto-t/1/talla/6

@@ -7,6 +7,10 @@ const findAll = (req, res) => {
 
 const create = (req, res) => {
     const itemcarrito = req.body;
+    const itemscarrito = repository.findAll();
+    const newId = itemscarrito.length > 0 ? itemscarrito[itemscarrito.length - 1].id + 1 : 1;
+    itemcarrito.id = newId;
+    
     const itemcarritoCreated = repository.create(itemcarrito);
     return res.status(201).json(itemcarritoCreated)
 }

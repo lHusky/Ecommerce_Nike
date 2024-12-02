@@ -1,4 +1,4 @@
-import repository from "../repositories/producto.js";
+import repository from "../repositories/stockProductos.js";
 
 const findAll = (req, res) => {
     const productos = repository.findAll();
@@ -8,21 +8,37 @@ const findAll = (req, res) => {
 
 const create = (req, res) => {
     const producto = req.body;
-
-    const productos = repository.findAll();
-    const newId = productos.length > 0 ? productos[productos.length - 1].id + 1 : 1;
+    const stocks = repository.findAll();
+    const newId = stocks.length > 0 ? stocks[stocks.length - 1].id + 1 : 1;
     producto.id = newId;
     
     const productoCreated = repository.create(producto);
     return res.status(201).json(productoCreated)
 }
 
-
 const findOne = (req,res) => {
     
     const id = req.params.id;
 
     const result = repository.findOne(id);
+
+    return res.status(200).json(result);
+}
+
+const findOneByProducto = (req,res) => {
+    
+    const id = req.params.id;
+
+    const result = repository.findOneByProducto(id);
+
+    return res.status(200).json(result);
+}
+const findOneByProductoTalla = (req,res) => {
+    
+    const id = req.params.id;
+    const talla = req.params.talla;
+    
+    const result = repository.findOneByProductoTalla(id,talla);
 
     return res.status(200).json(result);
 }
@@ -42,6 +58,6 @@ const remove = (req, res) => {
     return res.status(200).json(result);
 }
 
-const controller = { findAll, create, findOne, update, remove }
+const controller = { findAll, create, findOne,findOneByProducto,findOneByProductoTalla, update, remove }
 
 export default controller;
