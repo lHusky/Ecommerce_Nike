@@ -3,9 +3,27 @@ import Logo from '../../../assets/logo_nikes.png';
 import Jump from '../../../assets/JumpLogoNike.png';
 import Ver from '../../../assets/Ver.png';
 import './IngresarContraseña.css';
+import { useNavigate } from 'react-router-dom'; 
 
-const IngresarContraseña = ({ email }) => {
-    console.log("Email recibido en IngresarContraseña:", email); // Depuración
+const IngresarContraseña = ({ email, password }) => {
+  const [enteredPassword, setEnteredPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();  // Usamos el hook para redirigir
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (enteredPassword.trim() === password) {
+      alert('Contraseña correcta, bienvenido!');
+      navigate(`/PerfilPage/${email}`);  
+    } else {
+      setError('Contraseña incorrecta');
+    }
+  };
+  
+  const verContraseña = () => {
+    setShowPassword((prev) => !prev);  
+  };
 
   return (
     <div className="parte1">
@@ -21,24 +39,35 @@ const IngresarContraseña = ({ email }) => {
           </div>
           <span className="Titulo">¿Cuál es tu contraseña?</span>
           <div>
-            <form >
+            <form onSubmit={handleSubmit}>
               <div className="Correo">
                 <span className="Email">{email}</span> {/* Muestra el correo recibido */}
                 <a className="link" href="/iniciarSesion">Editar</a>
               </div>
               <div className="Contraseña">
-                <input type="password" placeholder="* Contraseña" required />
-                <button className="verContraseña">
+                <input
+                  type={showPassword ? "text" : "password"}  // Cambia el tipo del input según el estado de showPassword
+                  placeholder="* Contraseña"
+                  required
+                  value={enteredPassword}
+                  onChange={(e) => setEnteredPassword(e.target.value)}  // Actualiza el estado de la contraseña
+                />
+                <button
+                  type="button"
+                  className="verContraseña"
+                  onClick={verContraseña}  // Cambia la visibilidad de la contraseña al hacer clic
+                >
                   <img src={Ver} alt="Ver Contraseña" />
                 </button>
               </div>
+              {error && <div style={{ color: 'red' }}>{error}</div>} {/* Mostrar el error si ocurre */}
               <div>
-              <a className="link" href="/iniciarSesion">¿Olvidaste tu contraseña?</a>
+                <a className="link" href="/iniciarSesion">¿Olvidaste tu contraseña?</a>
               </div>
               <button type="submit" className="botonIniciarSesion">
-                Iniciar Sesion
+                Iniciar Sesión
               </button>
-              </form>
+            </form>
           </div>
         </div>
       </div>

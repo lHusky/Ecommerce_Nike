@@ -12,6 +12,7 @@ GET http://localhost:4001/usuario/yersdani.2019@gmail.com
 
 GET http://localhost:4001/usuario/email/20211590@aloe.ulima.edu.pe
 
+####
 GET http://localhost:4001/usuario/email/yersdani.2019@gmail.com
 
 ####

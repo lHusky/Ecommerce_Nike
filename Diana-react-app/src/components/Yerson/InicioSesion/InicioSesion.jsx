@@ -4,21 +4,10 @@ import Logo from '../../../assets/logo_nikes.png';
 import Jump from '../../../assets/JumpLogoNike.png';
 
 const IniciarSesion = ({ NoExisteUser, UsuarioExiste }) => {
-    const usuarioDefault = {
-        id:'',
-        Email:'',
-        Nombre:'',
-        Apellido:'',
-        password:'',
-        TipodeDocumento:'',
-        NumeroDocumento:'',
-        Genero:'',
-        FechaNacimiento:'',
-    };
-    const [email, setEmail] = useState(''); // Estado para el correo electrónico
 
-    // Función para obtener datos del usuario desde la API
-    const obtenerUsuario = async (email) => {
+    const [email, setEmail] = useState(''); 
+
+    const obtenerUsuario =   async (email) => {
         try {
             const response = await fetch(`http://localhost:4001/usuario/email/${email}`);
     
@@ -31,33 +20,30 @@ const IniciarSesion = ({ NoExisteUser, UsuarioExiste }) => {
     
             if (data.exists) {
                 console.log("Usuario encontrado:", data.user);
-                return data.user; // Retorna los datos del usuario si existe
+                return data.user; 
+                
             } else {
                 console.log("Usuario no encontrado.");
-                return null; // Usuario no existe
+                return null; 
             }
         } catch (error) {
             console.error("Error al obtener el usuario:", error);
-            return null; // Maneja errores
+            return null;
         }
     };
     
-    
-    
-
-    // Manejo del envío del formulario
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Correo ingresado:", email); // Depuración
+        console.log("Correo ingresado:", email); 
     
-        const usuario = await obtenerUsuario(email); // Llama a obtenerUsuario
-    
+        const usuario = await obtenerUsuario(email); 
         if (usuario) {
             console.log("Llamando a UsuarioExiste...");
-            UsuarioExiste(email); // Redirige si el usuario existe
+            UsuarioExiste(email,usuario.password); 
+            localStorage.setItem('usuario', JSON.stringify(usuario));
         } else {
             console.log("Llamando a NoExisteUser...");
-            NoExisteUser(email); // Redirige al registro si no existe
+            NoExisteUser(email); 
         }
     };
     

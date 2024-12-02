@@ -12,6 +12,7 @@ import ProductoPage from './routes/ProductoPage.jsx'
 import IngresarContraseña from './components/Yerson/IngresarContraseña/IngresarContraseña.jsx'
 import GraciasPage from './routes/GraciasPage.jsx'
 import UsuarioCheckoutPage from './routes/UsuarioCheckoutPage.jsx'
+import PerfilPage from './routes/PerfilPage.jsx'
 const router = createBrowserRouter([
   {
     path:"/",
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
   {
     path: "/PaginaProducto/:id",  
     element: <ProductoPage/> 
+  },
+
+  {
+    path: "/PerfilPage/:id",  
+    element: <PerfilPage/> 
   },
 
 ])
